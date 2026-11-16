@@ -216,7 +216,7 @@ function ComicCard({ c, paper = false }: { c: Card; paper?: boolean }) {
   return (
     <article data-live-href="/discover" className="group relative">
       <div className={`tc-sweep relative aspect-[3/4] overflow-hidden border-2 ${paper ? "border-[var(--ink)] shadow-[5px_5px_0_var(--ink)]" : "border-[var(--line)]"}`}>
-        <img src={img(c.key)} alt={c.title} className="h-full w-full object-cover" />
+        <img loading="lazy" decoding="async" src={img(c.key)} alt={c.title} className="h-full w-full object-cover" />
         {c.completed && <div className="absolute bottom-2 left-2"><span className="tc-tag bg-[var(--paper)]">Completed</span></div>}
         <span className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center border-2 border-[var(--line)] bg-[var(--ink)]/85 text-base text-white"><Bookmark /></span>
       </div>
@@ -321,7 +321,7 @@ export function ToonCentralPreview() {
                 </div>
                 <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-300">
                   <span className="flex items-center gap-2">
-                    <img src={img("av-tc")} alt="" className="h-7 w-7 border-2 border-[var(--line)] object-cover" />
+                    <img loading="lazy" decoding="async" src={img("av-tc")} alt="" className="h-7 w-7 border-2 border-[var(--line)] object-cover" />
                     by <span className="font-semibold text-white">Tooncentralofficial</span>
                   </span>
                   <span className="flex items-center gap-1.5"><Eye /> 1.5K views</span>
@@ -362,14 +362,14 @@ export function ToonCentralPreview() {
           <div className="grid grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-6">
             <div data-live-href="/discover" className="relative flex h-full flex-row gap-6 overflow-hidden border-2 border-[var(--line)] bg-[var(--panel)] p-8">
               <div className="absolute inset-0">
-                <img src={img("hunter-bg")} alt="" className="h-full w-full object-cover opacity-30" />
+                <img loading="lazy" decoding="async" src={img("hunter-bg")} alt="" className="h-full w-full object-cover opacity-30" />
                 <div className="tc-halftone-overlay absolute inset-0" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--ink)]/40 via-[var(--ink)]/80 to-[var(--ink)]" />
               </div>
               <div className="relative w-[45%] shrink-0 self-center">
                 <span className="tc-rank-solid tc-display pointer-events-none absolute -bottom-6 -left-3 z-10 text-[9rem] leading-none">1</span>
                 <div className="aspect-[3/4] -rotate-1 overflow-hidden border-[3px] border-black shadow-[8px_8px_0_var(--sun)]">
-                  <img src={img(first.key)} alt="" className="h-full w-full object-cover" />
+                  <img loading="lazy" decoding="async" src={img(first.key)} alt="" className="h-full w-full object-cover" />
                 </div>
               </div>
               <div className="relative flex min-w-0 flex-col justify-center">
@@ -391,7 +391,7 @@ export function ToonCentralPreview() {
               {rest.map((c, i) => (
                 <li key={c.key} data-live-href="/discover" className="flex items-center gap-4 px-2 py-2.5">
                   <span className={`tc-rank-outline tc-display w-12 shrink-0 text-center text-5xl leading-none ${i + 2 <= 3 ? "tc-rank-top" : ""}`}>{i + 2}</span>
-                  <img src={img(c.key)} alt="" className="h-16 w-12 shrink-0 border-2 border-[var(--line)] object-cover" />
+                  <img loading="lazy" decoding="async" src={img(c.key)} alt="" className="h-16 w-12 shrink-0 border-2 border-[var(--line)] object-cover" />
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-semibold text-white">{c.title}</p>
                     <p className="mt-0.5 truncate text-xs text-slate-400">{c.creator} · {c.genres[0]}</p>
@@ -414,7 +414,7 @@ export function ToonCentralPreview() {
             {SHORTS.map((s) => (
               <article key={s.key} data-live-href="/shorts" className="w-60 shrink-0">
                 <div className={`tc-sweep relative aspect-[4/5] overflow-hidden border-2 ${s.sponsored ? "border-dashed border-[var(--sun)]" : "border-[var(--line)]"}`}>
-                  <img src={img(s.key)} alt="" className="h-full w-full object-cover" />
+                  <img loading="lazy" decoding="async" src={img(s.key)} alt="" className="h-full w-full object-cover" />
                   {s.sponsored && <span className="tc-tag absolute left-2 top-2 bg-[var(--paper)]">Sponsored</span>}
                   <span className="absolute bottom-2 right-2 flex h-9 w-9 items-center justify-center border-2 border-black bg-[var(--mint)] text-2xl text-[var(--ink)]"><Play /></span>
                 </div>
@@ -442,10 +442,10 @@ export function ToonCentralPreview() {
             <article className="mb-14 grid grid-cols-[minmax(0,7fr)_minmax(0,5fr)] items-center gap-12">
               <div data-live-href="/originals" className="relative block">
                 <div className="aspect-[16/9] overflow-hidden border-[3px] border-[var(--ink)] bg-[var(--ink)] shadow-[8px_8px_0_var(--ink)]">
-                  <img src={img("senator-bg")} alt="" className="h-full w-full object-cover" />
+                  <img loading="lazy" decoding="async" src={img("senator-bg")} alt="" className="h-full w-full object-cover" />
                 </div>
                 <div className="absolute -bottom-8 left-6 w-[26%] max-w-[170px] -rotate-3 border-[3px] border-[var(--ink)] bg-[var(--ink)] shadow-[6px_6px_0_var(--ink)]">
-                  <img src={img("senator")} alt="" className="aspect-[3/4] w-full object-cover" />
+                  <img loading="lazy" decoding="async" src={img("senator")} alt="" className="aspect-[3/4] w-full object-cover" />
                 </div>
               </div>
               <div>
@@ -483,7 +483,7 @@ export function ToonCentralPreview() {
               <article key={shelf.name} data-live-href="/creators" className="flex h-full flex-col border-2 border-[var(--line)] bg-[var(--panel)] p-4">
                 <div className="flex items-center gap-3">
                   {shelf.avatar ? (
-                    <img src={img(shelf.avatar)} alt="" className="h-12 w-12 shrink-0 border-2 border-black object-cover" />
+                    <img loading="lazy" decoding="async" src={img(shelf.avatar)} alt="" className="h-12 w-12 shrink-0 border-2 border-black object-cover" />
                   ) : (
                     <span className={`tc-display flex h-12 w-12 shrink-0 items-center justify-center border-2 border-black text-lg text-[var(--ink)] ${TAG_BG[shelf.initialsTone ?? "sun"]}`}>{shelf.initials}</span>
                   )}
@@ -495,7 +495,7 @@ export function ToonCentralPreview() {
                 {shelf.comics.length === 1 ? (
                   <div className="mt-4 flex gap-4">
                     <div className="w-24 shrink-0">
-                      <div className="aspect-[3/4] overflow-hidden border-2 border-[var(--line)] bg-[var(--ink)]"><img src={img(shelf.comics[0].key)} alt="" className="h-full w-full object-cover" /></div>
+                      <div className="aspect-[3/4] overflow-hidden border-2 border-[var(--line)] bg-[var(--ink)]"><img loading="lazy" decoding="async" src={img(shelf.comics[0].key)} alt="" className="h-full w-full object-cover" /></div>
                     </div>
                     <div className="min-w-0">
                       <p className="truncate text-sm font-semibold text-white">{shelf.comics[0].title}</p>
@@ -507,7 +507,7 @@ export function ToonCentralPreview() {
                   <ul className="mt-4 grid grid-cols-4 gap-2.5">
                     {shelf.comics.map((c) => (
                       <li key={c.key} className="min-w-0">
-                        <div className="aspect-[3/4] overflow-hidden border-2 border-[var(--line)] bg-[var(--ink)]"><img src={img(c.key)} alt="" className="h-full w-full object-cover" /></div>
+                        <div className="aspect-[3/4] overflow-hidden border-2 border-[var(--line)] bg-[var(--ink)]"><img loading="lazy" decoding="async" src={img(c.key)} alt="" className="h-full w-full object-cover" /></div>
                         <p className="mt-1.5 truncate text-xs font-semibold text-white">{c.title}</p>
                         <p className="text-[11px] text-slate-400">{c.meta}</p>
                       </li>
@@ -549,7 +549,7 @@ export function ToonCentralPreview() {
                   {group.rows.map((r) => (
                     <div key={r.key + r.day} data-live-href={r.short ? "/shorts" : "/discover"} className="flex w-full items-center gap-3 border-2 border-transparent p-2">
                       <div className="relative aspect-[3/4] w-14 shrink-0 overflow-hidden border-2 border-[var(--line)] bg-[var(--ink)]">
-                        <img src={img(r.key)} alt="" className="h-full w-full object-cover" />
+                        <img loading="lazy" decoding="async" src={img(r.key)} alt="" className="h-full w-full object-cover" />
                         {r.short && <span className="absolute bottom-1 right-1 flex h-5 w-5 items-center justify-center border border-black bg-[var(--mint)] text-sm text-[var(--ink)]"><Play /></span>}
                       </div>
                       <div className="min-w-0 flex-1">
@@ -583,7 +583,7 @@ export function ToonCentralPreview() {
                         ["z-20 left-1/2 -translate-x-1/2", "z-10 left-[6%] -rotate-[10deg]", "z-10 right-[6%] rotate-[10deg]"][i]
                       }`}
                     >
-                      <img src={img(key)} alt="" className="aspect-[3/4] w-full object-cover" />
+                      <img loading="lazy" decoding="async" src={img(key)} alt="" className="aspect-[3/4] w-full object-cover" />
                     </div>
                   ))}
                 </div>
@@ -682,7 +682,7 @@ export function ToonCentralPreview() {
               </div>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                 <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">In partnership with</span>
-                {["itel", "mtn", "keble"].map((p) => <img key={p} src={`/tc/${p}.png`} alt={p} className="h-10 w-auto" />)}
+                {["itel", "mtn", "keble"].map((p) => <img loading="lazy" decoding="async" key={p} src={`/tc/${p}.png`} alt={p} className="h-10 w-auto" />)}
               </div>
             </div>
           </div>

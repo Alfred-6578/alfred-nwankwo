@@ -75,7 +75,7 @@ export function ScreenshotGallery({ screenshots }: { screenshots: ProjectScreens
               <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#a0a0a8] mb-4 flex items-center gap-3">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#ff5c35]" />
                 {group.name}
-                <span className="text-[#71717a]">
+                <span className="text-[#8b8b94]">
                   · {group.shots.length} {group.shots.length === 1 ? "shot" : "shots"}
                 </span>
               </div>

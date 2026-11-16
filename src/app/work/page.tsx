@@ -9,15 +9,14 @@ export const metadata: Metadata = {
 
 export default function WorkIndexPage() {
   return (
-    <div
+    <main
       className="min-h-screen bg-[#0a0a0b] text-[#f5f2ea] overflow-x-hidden relative selection:bg-[#ff5c35] selection:text-[#0a0a0b]"
-      style={{ fontFamily: "'Geist', system-ui, sans-serif" }}
+      style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300..600&family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap');
-        .display { font-family: 'Bricolage Grotesque', sans-serif; font-variation-settings: 'wdth' 92; }
-        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-        .serif { font-family: 'Instrument Serif', serif; }
+        .display { font-family: var(--font-bricolage), sans-serif; font-variation-settings: 'wdth' 92; }
+        .mono { font-family: var(--font-jetbrains), ui-monospace, monospace; }
+        .serif { font-family: var(--font-instrument), serif; }
       `}</style>
 
       {/* NAV */}
@@ -63,9 +62,9 @@ export default function WorkIndexPage() {
               className="group relative flex flex-col rounded-2xl border border-[#2a2a2f] bg-[#0f0f12]/85 p-6 md:p-7 hover:border-[#ff5c35]/40 transition-colors"
             >
               <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#ff5c35] mb-5 flex items-center gap-2">
-                <span className="text-[#71717a]">({String(i + 1).padStart(2, "0")})</span>
+                <span className="text-[#8b8b94]">({String(i + 1).padStart(2, "0")})</span>
                 <span>{p.year}</span>
-                <span className="text-[#71717a]">·</span>
+                <span className="text-[#8b8b94]">·</span>
                 <span className="text-[#a0a0a8]">{p.type}</span>
               </div>
 
@@ -90,7 +89,7 @@ export default function WorkIndexPage() {
                   </span>
                 ))}
                 {p.stack.length > 5 && (
-                  <span className="mono text-[10px] text-[#5c5c63] px-2 py-0.5">+{p.stack.length - 5}</span>
+                  <span className="mono text-[10px] text-[#8b8b94] px-2 py-0.5">+{p.stack.length - 5}</span>
                 )}
               </div>
 
@@ -116,6 +115,6 @@ export default function WorkIndexPage() {
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

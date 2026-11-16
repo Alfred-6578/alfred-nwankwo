@@ -42,8 +42,24 @@ export function PreviewLiveNav({
     }
   };
 
+  // Keep the copied sites' own links and buttons out of the keyboard tab order (the real site is one
+  // "View live" link away), so aria-hidden below never hides something focusable.
+  const rootRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    const silence = () =>
+      root.querySelectorAll<HTMLElement>("a, button, input, select, textarea, [tabindex]").forEach((el) => {
+        if (el.tabIndex !== -1) el.tabIndex = -1;
+      });
+    silence();
+    const mo = new MutationObserver(silence);
+    mo.observe(root, { childList: true, subtree: true });
+    return () => mo.disconnect();
+  }, []);
+
   return (
-    <div onClick={handleClick} className={className}>
+    <div ref={rootRef} onClick={handleClick} className={className} aria-hidden="true">
       {/* Scoped cursor hint for any deep-linked element */}
       <style>{`[data-live-href]{cursor:pointer;}`}</style>
       {children}
@@ -96,7 +112,7 @@ export function BrowserFrame({ url, children }: { url: string; children: React.R
         </div>
         <div className="flex-1 flex items-center justify-center">
           <div className="mono text-[10px] text-[#a0a0a8] bg-[#0a0a0b] px-3 py-1 rounded-full flex items-center gap-1.5 max-w-[320px]">
-            <span className="text-[#71717a]">●</span>
+            <span className="text-[#8b8b94]">●</span>
             <a
               href={url.startsWith("http") ? url : `https://${url}`}
               target="_blank"

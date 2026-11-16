@@ -38,15 +38,14 @@ export default async function CaseStudyPage({
   const liveHref = project.url.startsWith("http") ? project.url : `https://${project.url}`;
 
   return (
-    <div
+    <main
       className="min-h-screen bg-[#0a0a0b] text-[#f5f2ea] overflow-x-hidden relative selection:bg-[#ff5c35] selection:text-[#0a0a0b]"
-      style={{ fontFamily: "'Geist', system-ui, sans-serif" }}
+      style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300..600&family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap');
-        .display { font-family: 'Bricolage Grotesque', sans-serif; font-variation-settings: 'wdth' 92; }
-        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-        .serif { font-family: 'Instrument Serif', serif; }
+        .display { font-family: var(--font-bricolage), sans-serif; font-variation-settings: 'wdth' 92; }
+        .mono { font-family: var(--font-jetbrains), ui-monospace, monospace; }
+        .serif { font-family: var(--font-instrument), serif; }
       `}</style>
 
       {/* NAV */}
@@ -72,11 +71,11 @@ export default async function CaseStudyPage({
         <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#ff5c35] mb-6 flex items-center gap-3 flex-wrap">
           <span className="h-px w-8 bg-[#ff5c35]" />
           <span>{project.year}</span>
-          <span className="text-[#71717a]">·</span>
+          <span className="text-[#8b8b94]">·</span>
           <span className="text-[#a0a0a8]">{project.type}</span>
           {project.role && (
             <>
-              <span className="text-[#71717a]">·</span>
+              <span className="text-[#8b8b94]">·</span>
               <span className="text-[#a0a0a8]">{project.role}</span>
             </>
           )}
@@ -100,7 +99,7 @@ export default async function CaseStudyPage({
             Visit live site
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#0a0a0b] text-[#ff5c35] text-[10px] transition-transform group-hover:rotate-45">↗</span>
           </a>
-          <span className="mono text-[11px] uppercase tracking-[0.2em] text-[#5c5c63]">
+          <span className="mono text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">
             {project.url}
           </span>
         </div>
@@ -116,7 +115,7 @@ export default async function CaseStudyPage({
             { k: "Timeline", v: project.timeline ?? "—" },
           ].map((m) => (
             <div key={m.k} className="border-l border-[#2a2a2f] pl-3 md:pl-4">
-              <div className="mono text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-1.5">{m.k}</div>
+              <div className="mono text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-1.5">{m.k}</div>
               <div className="text-sm text-[#f5f2ea] leading-tight">{m.v}</div>
             </div>
           ))}
@@ -138,7 +137,7 @@ export default async function CaseStudyPage({
                 Screens the <em className="serif italic font-normal text-[#ff5c35]">live site</em> can&apos;t show you.
               </h2>
             </div>
-            <p className="mono text-[11px] uppercase tracking-[0.2em] text-[#71717a] max-w-xs">
+            <p className="mono text-[11px] uppercase tracking-[0.2em] text-[#8b8b94] max-w-xs">
               {project.screenshots.length} shot{project.screenshots.length === 1 ? "" : "s"} · role-gated views, admin surfaces, product tour
             </p>
           </div>
@@ -168,7 +167,7 @@ export default async function CaseStudyPage({
                 rel="noreferrer"
                 className="mono text-[10px] text-[#a0a0a8] bg-[#0a0a0b] px-3 py-1 rounded-full flex items-center gap-1.5 max-w-[320px]"
               >
-                <span className="text-[#71717a]">●</span>
+                <span className="text-[#8b8b94]">●</span>
                 <span className="truncate">{project.url}</span>
               </a>
             </div>
@@ -234,7 +233,7 @@ export default async function CaseStudyPage({
                 <div className="display text-4xl md:text-5xl font-bold text-[#f5f2ea] leading-none tracking-tight">
                   {s.value}
                 </div>
-                <div className="mono text-[10px] md:text-[11px] uppercase tracking-widest text-[#71717a] mt-3 leading-tight">
+                <div className="mono text-[10px] md:text-[11px] uppercase tracking-widest text-[#8b8b94] mt-3 leading-tight">
                   {s.label}
                 </div>
               </div>
@@ -269,7 +268,7 @@ export default async function CaseStudyPage({
               href={`/work/${prev.slug}`}
               className="group rounded-2xl border border-[#2a2a2f] bg-[#0f0f12]/85 p-6 hover:border-[#ff5c35]/40 transition-colors"
             >
-              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-2 flex items-center gap-2">
+              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-2 flex items-center gap-2">
                 <span>←</span> Previous project
               </div>
               <div className="display text-2xl font-bold">
@@ -286,7 +285,7 @@ export default async function CaseStudyPage({
               href={`/work/${next.slug}`}
               className="group rounded-2xl border border-[#2a2a2f] bg-[#0f0f12]/85 p-6 hover:border-[#ff5c35]/40 transition-colors md:text-right"
             >
-              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#71717a] mb-2 flex items-center gap-2 md:justify-end">
+              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-2 flex items-center gap-2 md:justify-end">
                 Next project <span>→</span>
               </div>
               <div className="display text-2xl font-bold">
@@ -308,6 +307,6 @@ export default async function CaseStudyPage({
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
