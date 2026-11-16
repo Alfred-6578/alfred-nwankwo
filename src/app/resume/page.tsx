@@ -160,12 +160,12 @@ export default function ResumePage() {
               </a>{" "}
               <span style={{ color: "#ff5c35" }}>·</span>{" "}
               <a
-                href="https://github.com/alfred-nwankwo"
+                href="https://github.com/Alfred-6578"
                 target="_blank"
                 rel="noreferrer"
                 className="r-link"
               >
-                github.com/alfred-nwankwo
+                github.com/Alfred-6578
               </a>{" "}
               <span style={{ color: "#ff5c35" }}>·</span>{" "}
               <a

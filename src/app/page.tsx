@@ -1491,7 +1491,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
             {[
-              { name: "GitHub", handle: "@alfrednwankwo", url: "https://github.com/Alfred-6578" },
+              { name: "GitHub", handle: "@Alfred-6578", url: "https://github.com/Alfred-6578" },
               { name: "X / Twitter", handle: "@alfrednwankwo", url: "https://x.com/Alfred_719" },
               { name: "LinkedIn", handle: "alfred-nwankwo", url: "https://www.linkedin.com/in/alfred-nwankwo/" },
               { name: "Read.cv", handle: "alfrednwankwo", url: "/resume" },
@@ -1558,7 +1558,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
               <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-4">Elsewhere</div>
               <div className="space-y-2 mono text-[11px]">
                 {[
-                  { name: "GitHub", handle: "@alfrednwankwo", url: "https://github.com/Alfred-6578" },
+                  { name: "GitHub", handle: "@Alfred-6578", url: "https://github.com/Alfred-6578" },
                   { name: "X / Twitter", handle: "@alfrednwankwo", url: "https://x.com/Alfred_719" },
                   { name: "LinkedIn", handle: "alfred-nwankwo", url: "https://www.linkedin.com/in/alfred-nwankwo/" },
                   { name: "Read.cv", handle: "alfrednwankwo", url: "/resume" },
