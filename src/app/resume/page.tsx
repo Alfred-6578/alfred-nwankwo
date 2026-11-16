@@ -130,7 +130,7 @@ export default function ResumePage() {
                 fontWeight: 500,
               }}
             >
-              Frontend Developer <span style={{ color: "#ff5c35" }}>·</span> Next.js &amp; TypeScript Specialist
+              Senior Frontend Engineer{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Next.js, React &amp; TypeScript
             </p>
             <p
               className="mono"
@@ -147,10 +147,19 @@ export default function ResumePage() {
               </a>{" "}
               <span style={{ color: "#ff5c35" }}>·</span>{" "}
               <a href="tel:+2347077629457" className="r-link">+234 707 762 9457</a>{" "}
-              <span style={{ color: "#ff5c35" }}>·</span> Remote{" "}
-              <span style={{ color: "#ff5c35" }}>·</span> UTC+1 <span style={{ color: "#ff5c35" }}>·</span>{" "}
+              <span style={{ color: "#ff5c35" }}>·</span>{" "}Remote{" "}
+              <span style={{ color: "#ff5c35" }}>·</span>{" "}UTC+1{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}
               Lagos, Nigeria
               <br />
+              <a
+                href="https://alfred-nwankwo.vercel.app"
+                target="_blank"
+                rel="noreferrer"
+                className="r-link"
+              >
+                alfred-nwankwo.vercel.app
+              </a>{" "}
+              <span style={{ color: "#ff5c35" }}>·</span>{" "}
               <a
                 href="https://github.com/alfred-nwankwo"
                 target="_blank"
@@ -177,11 +186,12 @@ export default function ResumePage() {
           <section className="r-avoid-break" style={{ marginBottom: "18px" }}>
             <h2 className="r-section-heading">Summary</h2>
             <p style={{ fontSize: "12px", lineHeight: 1.55, color: "#2a2a2f", margin: 0 }}>
-              Frontend developer with <strong>3+ years</strong> shipping production Next.js and TypeScript apps.
-              Specialised in complex state, role-based dashboards, payment flows, and AI integration.
-              Track record: page load times cut <strong>60%</strong>, <strong>50+ pages</strong> of{" "}
-              <strong>100% TypeScript</strong> across multi-tenant platforms, and AI tooling that generates
-              production-ready landing pages in <strong>under 10 seconds</strong>.
+              Frontend engineer with{" "}<strong>3+ years</strong>{" "}building production web apps in Next.js, React and
+              TypeScript, usually as the lead or sole frontend developer, owning architecture, reusable components and
+              REST API integration end to end. Strong on performance, payments, technical SEO and web security. Track
+              record: initial page load cut{" "}<strong>60%</strong>, a{" "}<strong>27,000+ line</strong>{" "}TypeScript platform
+              shipped solo, and a single shared token refresh across{" "}<strong>20+ parallel requests</strong>.
+              Comfortable working remotely with distributed teams.
             </p>
           </section>
 
@@ -193,30 +203,29 @@ export default function ResumePage() {
               <div className="r-role-line">
                 <div>
                   <div className="r-role-title">
-                    Lead Frontend Developer <span style={{ color: "#ff5c35" }}>·</span> AfrikDish
+                    Frontend Developer{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Toon Central
                   </div>
                   <div className="r-role-meta">
-                    Contract <span style={{ color: "#ff5c35" }}>·</span> African &amp; Caribbean food-delivery
-                    marketplace
+                    African comics &amp; short-video platform{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}
+                    <a href="https://toon-central.vercel.app" target="_blank" rel="noreferrer" className="r-link">
+                      toon-central.vercel.app
+                    </a>
                   </div>
                 </div>
-                <div className="r-role-date">Oct 2024 — Nov 2025</div>
+                <div className="r-role-date">Oct 2026 — Present</div>
               </div>
               <ul className="r-bullets">
                 <li>
-                  Built complete frontend — <strong>3 role-based dashboards</strong> (admin / vendor / customer)
-                  across <strong>50+ pages</strong> and <strong>15,000+ lines</strong> of TypeScript; onboarded{" "}
-                  <strong>12 vendors</strong> across <strong>26+ menu categories</strong>.
+                  Rebuilt the reader and creator frontend in{" "}<strong>Next.js 16 + TypeScript</strong>:{" "}<strong>47 routes</strong>,{" "}<strong>135 reusable components</strong>{" "}and{" "}<strong>27,000+ lines</strong>, covering a comic reader, shorts feed, creator studio and account area, all integrated with the backend{" "}<strong>REST API</strong>.
                 </li>
                 <li>
-                  Integrated <strong>Paystack</strong> checkout, Google OAuth, Google Maps (vendor discovery +
-                  delivery radius + real-time tracking), and vendor-verification workflows with granular
-                  permissions.
+                  Built{" "}<strong>Paystack payment flows</strong>: credit packs, recurring plans with cancel and switch, per-episode unlocks and purchase history, plus payment-status checks after checkout.
                 </li>
                 <li>
-                  Cut initial page load <strong>60%</strong> via Next.js SSR, code splitting, and skeleton
-                  loading; <strong>100% TypeScript</strong> coverage cut runtime errors{" "}
-                  <strong>~85%</strong> vs the prior JS baseline.
+                  Led{" "}<strong>technical SEO</strong>: server-rendered pages, keyword-rich addresses for each comic,{" "}<strong>JSON-LD structured data</strong>, sitemap, robots and canonical links. The previous live site had none of these.
+                </li>
+                <li>
+                  <strong>Performance and security hardening</strong>: tagged server-side caching of public API reads with instant expiry on creator edits; fixed site-wide API timeouts on{" "}<strong>IPv6/NAT64 networks</strong>{" "}by tuning Node&apos;s connection fallback; same-site checks on internal API routes and per-viewer view-count limits.
                 </li>
               </ul>
             </div>
@@ -225,40 +234,85 @@ export default function ResumePage() {
               <div className="r-role-line">
                 <div>
                   <div className="r-role-title">
-                    Lead Frontend Developer <span style={{ color: "#ff5c35" }}>·</span> Sonichoice Logistics
+                    Frontend Developer{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Emkairos Intelli Systems
                   </div>
                   <div className="r-role-meta">
-                    Contract <span style={{ color: "#ff5c35" }}>·</span> Multi-branch delivery operations
-                    platform
+                    Startup{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}YapShop, WhatsApp AI commerce platform{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}
+                    <a href="https://yapshop.emkairosintellisystems.com" target="_blank" rel="noreferrer" className="r-link">
+                      yapshop.emkairosintellisystems.com
+                    </a>
+                  </div>
+                </div>
+                <div className="r-role-date">May — Jul 2026</div>
+              </div>
+              <ul className="r-bullets">
+                <li>
+                  Built the operator dashboard for merchants selling on WhatsApp through a{" "}<strong>Claude-driven AI agent</strong>:{" "}<strong>22 routes</strong>,{" "}<strong>140 components</strong>,{" "}<strong>23,000+ lines</strong>{" "}of TypeScript, plus the marketing site and a platform admin tool.
+                </li>
+                <li>
+                  <strong>Realtime handoff queue</strong>{" "}over a token-authed{" "}<strong>WebSocket</strong>; claim / assign / reassign flows gated by{" "}<strong>per-resource permissions</strong>{" "}across 4 roles, enforced at render time and on every mutation.
+                </li>
+                <li>
+                  Rendered the agent&apos;s product templates inline as Cloudinary media cards with{" "}<strong>React.memo</strong>&apos;d bubbles;{" "}<strong>optimistic updates</strong>{" "}with revert-on-error; admin API behind a Next.js proxy so the JWT never reaches the browser.
+                </li>
+              </ul>
+            </div>
+
+            <div className="r-avoid-break" style={{ marginBottom: "14px" }}>
+              <div className="r-role-line">
+                <div>
+                  <div className="r-role-title">
+                    Lead Frontend Developer{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Sonichoice Logistics
+                  </div>
+                  <div className="r-role-meta">
+                    Contract{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Multi-branch delivery operations platform{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}
+                    <a href="https://inventory.sonichoicelogistics.com" target="_blank" rel="noreferrer" className="r-link">
+                      inventory.sonichoicelogistics.com
+                    </a>
                   </div>
                 </div>
                 <div className="r-role-date">Mar — Apr 2026</div>
               </div>
               <ul className="r-bullets">
                 <li>
-                  Built JWT auth with pre-flight expiry check and <strong>concurrent-request protection</strong>{" "}
-                  — single in-flight refresh shared across <strong>20+ parallel fetches</strong> — preventing
-                  duplicate refresh calls under load.
+                  Shipped{" "}<strong>2 role tiers</strong>{" "}with branch-scoped action gating enforced at both render and API layers; URL-deep-linked detail views across{" "}<strong>5 resource types</strong>; activity audit feed with{" "}<strong>3s-debounced</strong>{" "}search.
                 </li>
                 <li>
-                  Shipped <strong>2 role tiers</strong> with branch-scoped action gating enforced at both render
-                  and API layers; URL-deep-linked detail views across{" "}
-                  <strong>5 resource types</strong>; activity audit feed with <strong>3s-debounced</strong>{" "}
-                  search.
-                </li>
-                <li>
-                  Client-side <strong>PDF + Excel exports</strong> across all 5 resource types (styled headers,
-                  alternating row colors, branded layouts); race-condition guards ensure stale responses never
-                  overwrite the active selection.
+                  Client-side{" "}<strong>PDF + Excel exports</strong>{" "}across all 5 resource types (styled headers, alternating row colors, branded layouts); race-condition guards ensure stale responses never overwrite the active selection.
                 </li>
               </ul>
             </div>
 
-            <div className="r-avoid-break">
+            <div className="r-avoid-break" style={{ marginBottom: "14px" }}>
               <div className="r-role-line">
                 <div>
                   <div className="r-role-title">
-                    Frontend Developer Intern <span style={{ color: "#ff5c35" }}>·</span> Genesys Tech Hub
+                    Lead Frontend Developer{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}AfrikDish
+                  </div>
+                  <div className="r-role-meta">
+                    Contract{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}African &amp; Caribbean food-delivery marketplace
+                  </div>
+                </div>
+                <div className="r-role-date">Oct 2024 — Nov 2025</div>
+              </div>
+              <ul className="r-bullets">
+                <li>
+                  Built the complete responsive frontend:{" "}<strong>3 role-based dashboards</strong>{" "}(admin / vendor / customer) across{" "}<strong>50+ pages</strong>{" "}and{" "}<strong>15,000+ lines</strong>{" "}of TypeScript, with{" "}<strong>Paystack</strong>{" "}checkout, Google OAuth and Google Maps.
+                </li>
+                <li>
+                  Cut initial page load{" "}<strong>60%</strong>{" "}via Next.js SSR, code splitting, and skeleton loading;{" "}<strong>100% TypeScript</strong>{" "}coverage cut runtime errors{" "}<strong>~85%</strong>{" "}vs the prior JS baseline.
+                </li>
+                <li>
+                  Built{" "}<strong>JWT auth</strong>{" "}with a single in-flight token refresh shared across{" "}<strong>20+ parallel fetches</strong>, preventing duplicate refresh calls under load.
+                </li>
+              </ul>
+            </div>
+
+            <div className="r-avoid-break" style={{ marginBottom: "14px" }}>
+              <div className="r-role-line">
+                <div>
+                  <div className="r-role-title">
+                    Frontend Developer Intern{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Genesys Tech Hub
                   </div>
                   <div className="r-role-meta">
                     Technology training &amp; development center, Nigeria
@@ -268,12 +322,10 @@ export default function ResumePage() {
               </div>
               <ul className="r-bullets">
                 <li>
-                  Shipped <strong>8+ responsive UI components</strong> across 3 production apps using React and
-                  Tailwind; integrated REST APIs for auth, data fetching, and real-time updates.
+                  Shipped{" "}<strong>8+ responsive UI components</strong>{" "}across 3 production apps using React and Tailwind; integrated REST APIs for auth, data fetching, and real-time updates.
                 </li>
                 <li>
-                  Cut bundle sizes <strong>25%</strong> via code splitting and lazy loading, improving Time to
-                  Interactive across shared component libraries.
+                  Cut bundle sizes{" "}<strong>25%</strong>{" "}via code splitting and lazy loading, improving Time to Interactive across shared component libraries.
                 </li>
               </ul>
             </div>
@@ -287,7 +339,7 @@ export default function ResumePage() {
               <div className="r-role-line">
                 <div>
                   <div className="r-project-title">
-                    StayHaven <span style={{ color: "#ff5c35" }}>·</span> Full-stack hospitality platform
+                    StayHaven{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}Full-stack hospitality platform
                   </div>
                   <div className="r-project-meta">
                     Next.js 16 · Prisma · Postgres · Supabase · Paystack
@@ -310,14 +362,14 @@ export default function ResumePage() {
               </p>
               <ul className="r-bullets">
                 <li>
-                  <strong>4 role tiers</strong> (Guest / Staff / Manager / Admin), <strong>20+ Prisma models</strong>,{" "}
-                  <strong>9 transactional email templates</strong>, and a <strong>4-tier loyalty program</strong>{" "}
+                  <strong>4 role tiers</strong>{" "}(Guest / Staff / Manager / Admin),{" "}<strong>20+ Prisma models</strong>,{" "}
+                  <strong>9 transactional email templates</strong>, and a{" "}<strong>4-tier loyalty program</strong>{" "}
                   (Bronze → Platinum) with live tier-threshold upgrades.
                 </li>
                 <li>
                   Payment-gated upgrade &amp; extension flows with async Paystack pay-links; Supabase Realtime
                   notification bus fanning out to every authenticated client; admin analytics across{" "}
-                  <strong>7d / 30d / 90d / 12m</strong> views with PDF + XLSX exports.
+                  <strong>7d / 30d / 90d / 12m</strong>{" "}views with PDF + XLSX exports.
                 </li>
               </ul>
             </div>
@@ -326,7 +378,7 @@ export default function ResumePage() {
               <div className="r-role-line">
                 <div>
                   <div className="r-project-title">
-                    SiteGenie <span style={{ color: "#ff5c35" }}>·</span> AI landing-page generator
+                    SiteGenie{" "}<span style={{ color: "#ff5c35" }}>·</span>{" "}AI landing-page generator
                   </div>
                   <div className="r-project-meta">Next.js 16 · Gemini 2.5 Flash · React 19</div>
                 </div>
@@ -343,16 +395,16 @@ export default function ResumePage() {
               </div>
               <p className="r-project-desc">
                 SaaS that ships production-ready landing pages in{" "}
-                <strong>under 10 seconds</strong> from a plain-text business description.
+                <strong>under 10 seconds</strong>{" "}from a plain-text business description.
               </p>
               <ul className="r-bullets">
                 <li>
-                  Inline editing engine with path-aware state updates across <strong>5 section types</strong>;{" "}
-                  <strong>3 layout variants</strong> per section (single / two-column / image);{" "}
-                  <strong>9 palettes</strong> switching via CSS custom properties with zero re-render.
+                  Inline editing engine with path-aware state updates across{" "}<strong>5 section types</strong>;{" "}
+                  <strong>3 layout variants</strong>{" "}per section (single / two-column / image);{" "}
+                  <strong>9 palettes</strong>{" "}switching via CSS custom properties with zero re-render.
                 </li>
                 <li>
-                  Structured-JSON prompt engineering across <strong>4 industries</strong> with per-style tone
+                  Structured-JSON prompt engineering across{" "}<strong>4 industries</strong>{" "}with per-style tone
                   rules; per-section regeneration with layout-matched skeletons; client-side HTML + Tailwind
                   export.
                 </li>
@@ -364,20 +416,12 @@ export default function ResumePage() {
           <section className="r-avoid-break" style={{ marginBottom: "16px" }}>
             <h2 className="r-section-heading">Skills</h2>
             <div className="r-skills-row">
-              <div>
-                <strong>Frontend</strong>Next.js · React · TypeScript · JavaScript · Tailwind CSS · Framer
-                Motion
-              </div>
-              <div>
-                <strong>Backend</strong>MongoDB · PostgreSQL · Prisma · Supabase · Firebase
-              </div>
-              <div>
-                <strong>Integrations</strong>REST · Paystack · Google Maps · OAuth · Gemini AI · WhatsApp Cloud
-                API
-              </div>
-              <div>
-                <strong>Tools</strong>Git · Vercel · Figma · Postman · Chrome DevTools
-              </div>
+              <div><strong>Frontend</strong>Next.js 16 · React 19 · TypeScript · JavaScript · HTML5 · CSS3 · Tailwind CSS · React Query · Framer Motion</div>
+              <div><strong>Practices</strong>Responsive design · Performance optimization · Technical SEO · Web security · Reusable component design</div>
+              <div><strong>Realtime</strong>WebSocket · Server-Sent Events · Supabase Realtime</div>
+              <div><strong>Backend</strong>Node.js · PostgreSQL · Prisma · Supabase · MongoDB · Firebase</div>
+              <div><strong>Integrations</strong>REST · Paystack · Cloudinary · Google Maps · OAuth 2.0 · JWT · WhatsApp Cloud API · Claude AI · Gemini AI</div>
+              <div><strong>Tools</strong>Git · GitHub Actions · Vercel · Figma · Postman · Chrome DevTools</div>
             </div>
           </section>
 

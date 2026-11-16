@@ -2,6 +2,8 @@ import { StayHavenPreview } from "@/components/previews/stay-haven";
 import { SiteGeniePreview } from "@/components/previews/site-genie";
 import { SonichoicePreview } from "@/components/previews/sonichoice";
 import { AlfpatPreview } from "@/components/previews/alfpat";
+import { ToonCentralPreview } from "@/components/previews/toon-central";
+import { YapShopPreview } from "@/components/previews/yapshop";
 
 export type ProjectStat = { value: string; label: string };
 
@@ -36,6 +38,70 @@ export type Project = {
 };
 
 export const PROJECTS: Project[] = [
+  {
+    slug: "toon-central",
+    name: "Toon Central",
+    type: "Media platform · Client build",
+    year: "2026",
+    timeline: "Oct 2026 – present",
+    role: "Frontend developer · sole frontend engineer",
+    client: "Toon Central · Giving Africa a voice",
+    description:
+      "Rebuilt the reader and creator frontend for an African comics (\u201cMafiki\u201d) and animated-shorts platform: comic reader, shorts feed, Creator Studio, Paystack subscriptions and per-episode unlocks — all wired to the backend REST API, with technical SEO and security hardening the previous site never had.",
+    longDescription: [
+      "Toon Central publishes African comics — Mafiki — and animated shorts. I rebuilt the whole reader and creator frontend in Next.js 16 against the company's existing REST API: discovery, genres and creator pages, a vertical episode reader with locked pages, a shorts feed, accounts with Google sign-in, and a Creator Studio where creators publish Mafiki, upload episodes to Cloudinary, set unlock prices and track earnings. 47 routes, 135 components, 27,000+ lines of TypeScript.",
+      "Money runs through Paystack: credit packs, recurring plans and passes, cancel-and-switch, per-episode unlocks and purchase history. The backend has no confirm endpoint, so the return page reads the transaction until it settles, and an active subscription counts as paid even when its record lags behind. The access token never reaches the browser — every authenticated call goes through the Next.js server.",
+      "Two problems I'm proud of. The previous site had no sitemap, no robots.txt, no headings, no canonicals and no structured data; the rebuild gives every Mafiki a titled address, a keyword-led title and description, ComicSeries and breadcrumb JSON-LD, plus a sitemap and a /mafiki page to make the word itself searchable. And when every API call suddenly hung, the cause wasn't the app: on IPv6-only networks reaching the IPv4 backend through NAT64, the IPv6 route took ~400 ms but Node gives each address only 250 ms — one startup setting fixed it site-wide.",
+    ],
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind 4", "REST API", "Paystack", "Cloudinary", "Google OAuth", "JSON-LD"],
+    url: "toon-central.vercel.app",
+    stats: [
+      { value: "47", label: "Routes" },
+      { value: "135", label: "Components" },
+      { value: "27k+", label: "Lines of TS" },
+    ],
+    highlights: [
+      "Paystack payments end to end — credit packs, recurring plans and passes, cancel-and-switch, per-episode unlocks with credits, purchase history, and payment-status checks after checkout.",
+      "Technical SEO from zero — titled Mafiki addresses (/mafiki/<title>-<id>) with redirects from old links, keyword-led titles and descriptions, ComicSeries / Organization / Breadcrumb JSON-LD, sitemap, robots and canonicals.",
+      "Fixed site-wide API timeouts on IPv6/NAT64 networks by raising Node's per-address connection fallback (250 ms → 2 s) at server start-up.",
+      "Tagged server-side caching of public API reads, cleared the moment a creator edits in Studio; personal data always fetched fresh.",
+      "Honest view counts — an anonymous per-viewer cookie, one view per viewer per 5 minutes and a per-IP hourly cap, so refreshing no longer inflates numbers.",
+      "Security pass before launch — same-site checks on internal API routes, access token kept server-side, no secrets in client bundles, private pages kept out of search.",
+    ],
+    preview: <ToonCentralPreview />,
+  },
+  {
+    slug: "yapshop",
+    name: "YapShop",
+    type: "AI commerce · Startup product",
+    year: "2026",
+    timeline: "May – Jul 2026",
+    role: "Frontend developer",
+    client: "Emkairos Intelli Systems",
+    description:
+      "Operator dashboard for businesses that sell entirely on WhatsApp. A Claude-driven agent handles product discovery, cart and payment confirmation in the chat; staff step in only when a handoff fires — with the full conversation, a realtime queue and role-gated tools.",
+    longDescription: [
+      "YapShop is Emkairos Intelli Systems' product for merchants who run their whole storefront on WhatsApp. Customers chat with a Claude-driven agent that finds products, builds the cart, creates the order and confirms payment. When the agent hits something it shouldn't handle — a return, a complaint, a special request — it hands the conversation to a human. I built the operator dashboard where that happens, plus the marketing site and a separate admin tool for the platform team.",
+      "The heart of it is the handoff queue: pending, active and resolved tabs fed by a token-authenticated WebSocket, with claim, assign and reassign flows gated by per-resource permissions across owner, admin, support and sales roles — the same gate enforced at render time and on every mutation. AI messages carry product templates that the dashboard renders inline as cards with Cloudinary images, audio and video, memoised so media doesn't re-fetch on every socket update.",
+      "Around that: products with variants and per-media \u201clive vs stock\u201d flags so the AI knows what it can show as proof, orders, customers, staff and settings. Auth is a two-token JWT with a single shared refresh across parallel queries, and the admin tool never exposes the backend — every call goes through a Next.js proxy that attaches the token from an httpOnly cookie. 22 routes, 140 components, 23,000+ lines of TypeScript.",
+    ],
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind 4", "React Query", "WebSocket", "WhatsApp Cloud API", "Cloudinary", "Claude AI"],
+    url: "yapshop.emkairosintellisystems.com",
+    stats: [
+      { value: "22", label: "Routes" },
+      { value: "4", label: "Role tiers" },
+      { value: "23k+", label: "Lines of TS" },
+    ],
+    highlights: [
+      "Realtime handoff queue over a token-authenticated WebSocket — pending / active / resolved tabs with claim, assign and reassign flows.",
+      "Per-resource permission modules across owner / admin / support / sales, enforced both at render time and on every mutation.",
+      "Inline rendering of the agent's product templates as cards with multi-URL Cloudinary media (image / audio / video), host and extension classification and onError fallbacks; React.memo'd bubbles so media never re-fetches on socket updates.",
+      "Per-media live / stock flag so the AI knows which photos it can send as proof — optimistic toggle with revert-on-error on dedicated PATCH / DELETE endpoints.",
+      "JWT two-token auth with pre-flight expiry check and a single in-flight refresh shared across 20+ parallel queries; middleware gates every protected route server-side.",
+      "Separate platform admin tool behind a Next.js proxy — the backend origin and token never reach the browser; money handled as integer kobo throughout.",
+    ],
+    preview: <YapShopPreview />,
+  },
   {
     slug: "stayhaven",
     name: "StayHaven",
@@ -93,6 +159,49 @@ export const PROJECTS: Project[] = [
     preview: <StayHavenPreview />,
   },
   {
+    slug: "sonichoice",
+    name: "Sonichoice",
+    type: "Logistics · Full-stack SaaS",
+    year: "2026",
+    timeline: "Q1 2026 · Multi-month build",
+    role: "Lead frontend developer",
+    client: "Sonichoice Logistics",
+    description:
+      "Full-stack delivery ops platform for multi-branch logistics. Parcel tracking, per-branch inventory, merchants directory, staff admin, and a full activity audit trail. JWT refresh with pre-flight exp check + concurrent-request protection, branch-scoped action gating, URL-deep-linked detail panels, race-condition protection on fetches, and client-side PDF + Excel exports. The deep technical build of the three.",
+    longDescription: [
+      "Sonichoice is a delivery operations platform for a Nigerian multi-branch logistics company. It replaces the spreadsheet-and-WhatsApp workflow most branch operators live in — parcels, per-branch stock, merchants, staff, and a full audit trail all in one system with branch-aware actions and role-gated pages.",
+      "Most of the engineering work was invisible from the screenshot. The axios-based API wrapper runs a pre-flight JWT exp check on every request and auto-refreshes on 401, with a concurrent-refresh protection so 20 parallel requests don't spawn 20 refresh calls. Detail panels use a latestSelectId ref to prevent race conditions — click product A then product B and only B's response paints. URL query params deep-link every detail view (?parcelId=X, ?productId=Y) so dashboard click-throughs and shared links both land on the open panel.",
+      "Client-side PDF and Excel exports across Parcels, Inventory, and Merchants — jsPDF with autotable for the PDFs, ExcelJS for workbooks with styled titles and alternating row colors. No backend export pipeline needed.",
+    ],
+    stack: ["Next.js 16", "React 19", "TypeScript 5", "Tailwind 4", "jsPDF", "ExcelJS", "lucide-react"],
+    url: "inventory.sonichoicelogistics.com",
+    stats: [
+      { value: "5", label: "Resource types" },
+      { value: "2", label: "Role tiers" },
+      { value: "PDF+XLSX", label: "Exports" },
+    ],
+    highlights: [
+      "JWT auth with access + refresh token flow — pre-flight exp check before every request, auto-refresh on 401, and concurrent-request protection (single in-flight refresh promise shared across parallel fetches).",
+      "Role-based access with branch-scoped action gating — parcel status transitions check user.branchId against parcel.fromBranchId and toBranchId; staff-only actions hide at render, not just at the API.",
+      "Race-condition protection on detail panels — latestSelectId ref ensures stale responses never overwrite the latest click.",
+      "URL-deep-linked detail panels across Parcels, Inventory, and Branches — clicking a dashboard entry opens the right detail view on navigation.",
+      "Client-side PDF and Excel export across 5 resource types with styled headers, alternating row colors, and branded layouts.",
+      "Activity audit feed with keyword-filtered counts, scope toggle (All / My Activity) for admins, and 3s-debounced search to avoid spamming the backend.",
+    ],
+    screenshots: [
+      // ---------- Operations (daily-use resource surfaces) ----------
+      { src: "/soni-screenshot-1.png", alt: "Sonichoice dashboard", caption: "Dashboard · KPIs + recent parcels + activity feed", group: "Operations" },
+      { src: "/soni-screenshot-2.png", alt: "Parcels list", caption: "Parcels · list, status pills, branch + merchant filters", group: "Operations" },
+      { src: "/soni-screenshot-3.png", alt: "Inventory management", caption: "Inventory · per-branch stock + SKU tracking", group: "Operations" },
+      { src: "/soni-screenshot-4.png", alt: "Merchants directory", caption: "Merchants · directory with status + colored avatars", group: "Operations" },
+      // ---------- Admin (management + audit) ----------
+      { src: "/soni-screenshot-5.png", alt: "Branches overview", caption: "Branches · holdings + transit + received metrics", group: "Admin" },
+      { src: "/soni-screenshot-6.png", alt: "Staff management console", caption: "Staff management · role + branch editor (admin-only)", group: "Admin" },
+      { src: "/soni-screenshot-7.png", alt: "Activity audit feed", caption: "Activity logs · keyword-filtered audit feed", group: "Admin" },
+    ],
+    preview: <SonichoicePreview />,
+  },
+  {
     slug: "sitegenie",
     name: "SiteGenie",
     type: "AI product · Personal",
@@ -129,49 +238,6 @@ export const PROJECTS: Project[] = [
     //   { src: "/sg-ecommerce.webp", alt: "Nextgen — e-commerce template", caption: "E-commerce: Nextgen" },
     // ],
     preview: <SiteGeniePreview />,
-  },
-  {
-    slug: "sonichoice",
-    name: "Sonichoice",
-    type: "Logistics · Full-stack SaaS",
-    year: "2026",
-    timeline: "Q1 2026 · Multi-month build",
-    role: "Lead frontend developer",
-    client: "Sonichoice Logistics",
-    description:
-      "Full-stack delivery ops platform for multi-branch logistics. Parcel tracking, per-branch inventory, merchants directory, staff admin, and a full activity audit trail. JWT refresh with pre-flight exp check + concurrent-request protection, branch-scoped action gating, URL-deep-linked detail panels, race-condition protection on fetches, and client-side PDF + Excel exports. The deep technical build of the three.",
-    longDescription: [
-      "Sonichoice is a delivery operations platform for a Nigerian multi-branch logistics company. It replaces the spreadsheet-and-WhatsApp workflow most branch operators live in — parcels, per-branch stock, merchants, staff, and a full audit trail all in one system with branch-aware actions and role-gated pages.",
-      "Most of the engineering work was invisible from the screenshot. The axios-based API wrapper runs a pre-flight JWT exp check on every request and auto-refreshes on 401, with a concurrent-refresh protection so 20 parallel requests don't spawn 20 refresh calls. Detail panels use a latestSelectId ref to prevent race conditions — click product A then product B and only B's response paints. URL query params deep-link every detail view (?parcelId=X, ?productId=Y) so dashboard click-throughs and shared links both land on the open panel.",
-      "Client-side PDF and Excel exports across Parcels, Inventory, and Merchants — jsPDF with autotable for the PDFs, ExcelJS for workbooks with styled titles and alternating row colors. No backend export pipeline needed.",
-    ],
-    stack: ["Next.js 16", "React 19", "TypeScript 5", "Tailwind 4", "jsPDF", "ExcelJS", "lucide-react"],
-    url: "sonichoice-inventory-management.vercel.app",
-    stats: [
-      { value: "5", label: "Resource types" },
-      { value: "2", label: "Role tiers" },
-      { value: "PDF+XLSX", label: "Exports" },
-    ],
-    highlights: [
-      "JWT auth with access + refresh token flow — pre-flight exp check before every request, auto-refresh on 401, and concurrent-request protection (single in-flight refresh promise shared across parallel fetches).",
-      "Role-based access with branch-scoped action gating — parcel status transitions check user.branchId against parcel.fromBranchId and toBranchId; staff-only actions hide at render, not just at the API.",
-      "Race-condition protection on detail panels — latestSelectId ref ensures stale responses never overwrite the latest click.",
-      "URL-deep-linked detail panels across Parcels, Inventory, and Branches — clicking a dashboard entry opens the right detail view on navigation.",
-      "Client-side PDF and Excel export across 5 resource types with styled headers, alternating row colors, and branded layouts.",
-      "Activity audit feed with keyword-filtered counts, scope toggle (All / My Activity) for admins, and 3s-debounced search to avoid spamming the backend.",
-    ],
-    screenshots: [
-      // ---------- Operations (daily-use resource surfaces) ----------
-      { src: "/soni-screenshot-1.png", alt: "Sonichoice dashboard", caption: "Dashboard · KPIs + recent parcels + activity feed", group: "Operations" },
-      { src: "/soni-screenshot-2.png", alt: "Parcels list", caption: "Parcels · list, status pills, branch + merchant filters", group: "Operations" },
-      { src: "/soni-screenshot-3.png", alt: "Inventory management", caption: "Inventory · per-branch stock + SKU tracking", group: "Operations" },
-      { src: "/soni-screenshot-4.png", alt: "Merchants directory", caption: "Merchants · directory with status + colored avatars", group: "Operations" },
-      // ---------- Admin (management + audit) ----------
-      { src: "/soni-screenshot-5.png", alt: "Branches overview", caption: "Branches · holdings + transit + received metrics", group: "Admin" },
-      { src: "/soni-screenshot-6.png", alt: "Staff management console", caption: "Staff management · role + branch editor (admin-only)", group: "Admin" },
-      { src: "/soni-screenshot-7.png", alt: "Activity audit feed", caption: "Activity logs · keyword-filtered audit feed", group: "Admin" },
-    ],
-    preview: <SonichoicePreview />,
   },
   {
     slug: "alfpat-electronics",

@@ -252,9 +252,9 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                     ))}
                   </div>
                   <div className="text-[10px] text-[#71717a] leading-tight">
-                    <div className="text-[#f5f2ea] font-semibold text-[11px]">3+ projects shipped</div>
+                    <div className="text-[#f5f2ea] font-semibold text-[11px]">Payments, realtime &amp; AI in prod</div>
                     <div className="text-[#c8ff3d] tracking-tight flex items-center gap-1">
-                      <span className="h-1 w-1 rounded-full bg-[#c8ff3d]" /> All live in prod
+                      <span className="h-1 w-1 rounded-full bg-[#c8ff3d]" /> 6 platforms shipped since 2022
                     </div>
                   </div>
                 </div>
@@ -365,9 +365,9 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
           <div className="fade-up mt-12 md:mt-16 grid grid-cols-3 max-w-2xl mx-auto" style={{ animationDelay: "1.95s" }}>
             {[
-              { num: "3", suffix: "+", label: "Projects shipped" },
+              { num: "60", suffix: "k+", label: "Lines of production TS" },
               { num: "3", suffix: "y+", label: "Building for the web" },
-              { num: "Q2", suffix: "/26", label: "Open for work" },
+              { num: "60", suffix: "%", label: "Faster page loads" },
             ].map((s, i) => (
               <div key={i} className={`text-center ${i < 2 ? "border-r border-[#26262a]" : ""} px-3`}>
                 <div className="display text-3xl md:text-[42px] font-bold text-[#f5f2ea] leading-none">
@@ -413,7 +413,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             </p>
             <div className="flex items-center gap-2 mono text-[10px] text-[#5c5c63] uppercase tracking-[0.2em]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#c8ff3d] blink" />
-              03 shown · <Link href="/work" className="text-[#f5f2ea] underline decoration-[#ff5c35]">full archive →</Link>
+              05 shown · <Link href="/work" className="text-[#f5f2ea] underline decoration-[#ff5c35]">full archive →</Link>
             </div>
           </div>
         </div>
@@ -503,7 +503,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             <p className="text-[#e8e4d8] leading-relaxed mb-4 text-[15px] md:text-base">
               I build interfaces that feel <span className="serif italic text-[#ff5c35]">alive</span> — careful layouts,
               considered motion, the kind of detail you only notice on the second scroll. Three years in, I&apos;ve shipped
-              projects ranging from hotel booking sites to full logistics platforms.
+              six production platforms, from African comics and WhatsApp AI commerce to logistics and hotel booking.
             </p>
             <p className="text-[#a0a0a8] leading-relaxed text-sm md:text-[15px] mb-6">
               My sweet spot is modern React stacks — Next.js 14/16, TypeScript, Tailwind, Motion — with genuine
@@ -511,11 +511,11 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             </p>
 
             <div className="flex items-center gap-3 flex-wrap pt-4 border-t border-[#1f1f24]">
-              <a href="#" className="mono text-[11px] uppercase tracking-[0.2em] text-[#ff5c35] hover:text-[#ff7a5c] border-b border-[#ff5c35]/40 hover:border-[#ff5c35] pb-0.5 transition-colors inline-flex items-center gap-1.5">
+              <a href="/resume" className="mono text-[11px] uppercase tracking-[0.2em] text-[#ff5c35] hover:text-[#ff7a5c] border-b border-[#ff5c35]/40 hover:border-[#ff5c35] pb-0.5 transition-colors inline-flex items-center gap-1.5">
                 Read the long version <span>→</span>
               </a>
               <span className="text-[#2a2a2f]">·</span>
-              <a href="#" className="mono text-[11px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#f5f2ea] transition-colors">
+              <a href="/Alfred-Nwankwo-Resume.pdf" target="_blank" rel="noreferrer" className="mono text-[11px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#f5f2ea] transition-colors">
                 Résumé →
               </a>
             </div>
@@ -617,8 +617,8 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c8ff3d] blink shadow-[0_0_6px_#c8ff3d]" />
                 Available
               </div>
-              <div className="display text-xl md:text-2xl font-bold mb-1 leading-[1.1]">Booking for<br /><span className="text-[#c8ff3d]">Q2 2026</span></div>
-              <div className="text-[#a0a0a8] text-xs mb-5 mt-2">Taking on 1–2 new projects this quarter.</div>
+              <div className="display text-xl md:text-2xl font-bold mb-1 leading-[1.1]">Open to<br /><span className="text-[#c8ff3d]">full-time roles</span></div>
+              <div className="text-[#a0a0a8] text-xs mb-5 mt-2">Remote, UTC+1 · senior frontend roles.</div>
               <a href="#contact" className="inline-flex items-center gap-2 rounded-full bg-[#c8ff3d] text-[#0a0a0b] px-4 py-2 text-[12px] md:text-sm font-semibold hover:bg-[#d9ff6e] transition-colors">
                 Book a call <span>→</span>
               </a>
@@ -902,7 +902,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
           </div>
           <div className="col-span-12 md:col-span-4 md:col-start-9 md:pt-4">
             <p className="text-sm md:text-base text-[#a0a0a8] leading-relaxed">
-              One lead role, one freelance build, one internship. I&apos;d rather show what I actually did than pad the list with noise.
+              A current client build, a startup product, two lead contracts and an internship. I&apos;d rather show what I actually did than pad the list with noise.
             </p>
           </div>
         </div>
@@ -917,13 +917,176 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             </div>
             <div>
               <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#c8ff3d]">Present</div>
-              <div className="text-sm text-[#a0a0a8]">Between roles · available Q2 2026</div>
+              <div className="text-sm text-[#a0a0a8]">Building Toon Central · open to full-time roles</div>
             </div>
           </div>
 
           <div className="relative md:pl-6">
             {/* Vertical line */}
             <div className="absolute left-[5px] md:left-[6px] top-0 bottom-12 w-px bg-gradient-to-b from-[#c8ff3d] via-[#ff5c35] to-[#2a2a2f]" />
+
+            {/* ============ TOON CENTRAL — CURRENT CARD ============ */}
+            <div className="relative pl-8 md:pl-10 pb-12 md:pb-16">
+              <div className="absolute left-0 top-6 h-4 w-4 rounded-full bg-[#c8ff3d]" style={{ boxShadow: "0 0 0 5px rgba(200,255,61,0.18)" }} />
+
+              <div className="rounded-2xl border border-[#2a2a2f] bg-gradient-to-br from-[#0f0f12]/90 to-[#0a0a0b] p-6 md:p-8 relative overflow-hidden group hover:border-[#c8ff3d]/40 transition-colors">
+                <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[#c8ff3d]/5 blur-3xl pointer-events-none" />
+                <div className="relative">
+                  <div className="flex flex-wrap items-center gap-3 mb-5">
+                    <span className="mono text-[10px] uppercase tracking-[0.25em] bg-[#c8ff3d] text-[#0a0a0b] px-2.5 py-1 rounded font-bold">
+                      Current · client build
+                    </span>
+                    <span className="mono text-[11px] text-[#a0a0a8] uppercase tracking-wider">
+                      Oct 2026 — Present
+                    </span>
+                  </div>
+
+                  <div className="flex items-start justify-between flex-wrap gap-4 mb-5">
+                    <div>
+                      <h3 className="display text-3xl md:text-[44px] font-bold leading-[1] tracking-[-0.025em] mb-3">
+                        Frontend Developer
+                      </h3>
+                      <div className="flex items-baseline gap-2.5 flex-wrap">
+                        <span className="display text-xl md:text-2xl font-semibold text-[#ff5c35]">Toon Central</span>
+                        <span className="text-sm text-[#71717a]">·</span>
+                        <span className="text-sm text-[#a0a0a8]">African comics &amp; animated-shorts platform</span>
+                      </div>
+                    </div>
+                    <a href="https://toon-central.vercel.app" target="_blank" rel="noreferrer" className="mono text-[10px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#ff5c35] border-b border-[#2a2a2f] hover:border-[#ff5c35] pb-0.5 transition-colors">
+                      toon-central.vercel.app →
+                    </a>
+                  </div>
+
+                  <p className="text-[15px] md:text-base text-[#e8e4d8] leading-relaxed mb-6 max-w-3xl">
+                    Sole frontend engineer rebuilding the reader and creator experience in Next.js 16 on the company&apos;s existing REST API — comic reader, shorts feed, Creator Studio, Paystack payments, technical SEO and a security pass before launch.
+                  </p>
+
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 pb-6 border-b border-[#1a1a1d]">
+                    {[
+                      { v: "47", l: "Routes" },
+                      { v: "135", l: "Reusable components" },
+                      { v: "27k+", l: "Lines of TypeScript" },
+                      { v: "250ms→2s", l: "NAT64 timeout fix" },
+                    ].map((m, i) => (
+                      <div key={i} className="border-l-2 border-[#c8ff3d] pl-3">
+                        <div className="display text-2xl md:text-[32px] font-bold text-[#f5f2ea] leading-none">{m.v}</div>
+                        <div className="mono text-[9px] md:text-[10px] uppercase tracking-wider text-[#71717a] mt-2 leading-tight">{m.l}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "Built Paystack flows end to end — credit packs, recurring plans, cancel-and-switch, per-episode unlocks and purchase history — with the access token kept server-side.",
+                      "Took SEO from nothing to complete: titled Mafiki addresses, keyword-led titles, JSON-LD structured data, sitemap, robots and canonicals.",
+                      "Diagnosed site-wide API hangs on IPv6/NAT64 networks to Node's 250 ms connection fallback and fixed them with one start-up setting.",
+                      "Tagged server-side caching of public reads with instant expiry on creator edits; per-viewer view counting that stops refresh inflation.",
+                    ].map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[14px] md:text-[15px] text-[#d4d0c8] leading-relaxed">
+                        <span className="text-[#c8ff3d] mt-1.5 text-[8px] flex-shrink-0">▸</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {["Next.js 16", "React 19", "TypeScript", "Tailwind 4", "Paystack", "Cloudinary", "Google OAuth", "JSON-LD"].map((t) => (
+                      <span key={t} className="mono text-[10px] md:text-[11px] border border-[#26262a] bg-[#111113] text-[#a0a0a8] px-2.5 py-1 rounded-full">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-[#1a1a1d] flex items-center justify-between">
+                    <span className="mono text-[10px] uppercase tracking-wider text-[#5c5c63]">Full case study</span>
+                    <Link href="/work/toon-central" className="mono text-[11px] text-[#ff5c35] hover:text-[#ff7a5c] uppercase tracking-[0.15em] flex items-center gap-1.5">
+                      Read it →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ============ EMKAIROS (YAPSHOP) — STARTUP CARD ============ */}
+            <div className="relative pl-8 md:pl-10 pb-12 md:pb-16">
+              <div className="absolute left-0 top-6 h-3 w-3 rounded-full bg-[#ff5c35] shadow-[0_0_12px_#ff5c35]" style={{ boxShadow: "0 0 0 4px rgba(255,92,53,0.15)" }} />
+
+              <div className="rounded-2xl border border-[#2a2a2f] bg-[#0f0f12]/85 p-5 md:p-7 relative overflow-hidden group hover:border-[#ff5c35]/40 transition-colors">
+                <div className="relative">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="mono text-[10px] uppercase tracking-[0.25em] border border-[#ff5c35]/40 bg-[#ff5c35]/5 text-[#ff5c35] px-2.5 py-1 rounded font-semibold">
+                      Startup · registered company
+                    </span>
+                    <span className="mono text-[11px] text-[#a0a0a8] uppercase tracking-wider">
+                      May — Jul 2026
+                    </span>
+                  </div>
+
+                  <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
+                    <div>
+                      <h3 className="display text-2xl md:text-3xl font-bold leading-[1.05] tracking-[-0.02em] mb-2">
+                        Frontend Developer
+                      </h3>
+                      <div className="flex items-baseline gap-2.5 flex-wrap">
+                        <span className="display text-xl md:text-2xl font-semibold text-[#ff5c35]">Emkairos Intelli Systems</span>
+                        <span className="text-sm text-[#71717a]">·</span>
+                        <span className="text-sm text-[#a0a0a8]">YapShop, WhatsApp AI commerce</span>
+                      </div>
+                    </div>
+                    <a href="https://yapshop.emkairosintellisystems.com" target="_blank" rel="noreferrer" className="mono text-[10px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#ff5c35] border-b border-[#2a2a2f] hover:border-[#ff5c35] pb-0.5 transition-colors">
+                      yapshop →
+                    </a>
+                  </div>
+
+                  <p className="text-[14px] md:text-[15px] text-[#d4d0c8] leading-relaxed mb-5 max-w-3xl">
+                    Built the operator dashboard, marketing site and platform admin tool for YapShop — merchants sell on WhatsApp through a Claude-driven agent, and staff take over only when a handoff fires.
+                  </p>
+
+                  <div className="grid grid-cols-3 md:grid-cols-4 gap-3 mb-5 pb-5 border-b border-[#1a1a1d]">
+                    {[
+                      { v: "22", l: "Dashboard routes" },
+                      { v: "4 roles", l: "Per-resource permissions" },
+                      { v: "WebSocket", l: "Realtime handoff queue" },
+                      { v: "23k+", l: "Lines of TypeScript" },
+                    ].map((m, i) => (
+                      <div key={i} className="border-l-2 border-[#ff5c35] pl-3">
+                        <div className="display text-base md:text-lg font-bold text-[#f5f2ea] leading-tight">{m.v}</div>
+                        <div className="mono text-[9px] uppercase tracking-wider text-[#71717a] mt-1 leading-tight">{m.l}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <ul className="space-y-2.5 mb-5">
+                    {[
+                      "Realtime handoff queue (pending / active / resolved) over a token-authenticated WebSocket, with claim, assign and reassign flows.",
+                      "Permission modules across owner / admin / support / sales, enforced at render time and on every mutation.",
+                      "Rendered the AI agent's product templates inline as media cards; memoised bubbles so media never re-fetches on socket updates.",
+                      "Admin tool behind a Next.js proxy: the backend origin and JWT never reach the browser.",
+                    ].map((b, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-[#d4d0c8] leading-relaxed">
+                        <span className="text-[#ff5c35] mt-1 text-[8px] flex-shrink-0">▸</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {["Next.js 16", "TypeScript", "React Query", "WebSocket", "WhatsApp Cloud API", "Cloudinary", "Claude AI"].map((t) => (
+                      <span key={t} className="mono text-[10px] border border-[#26262a] bg-[#111113] text-[#a0a0a8] px-2 py-0.5 rounded-full">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-[#1a1a1d] flex items-center justify-between">
+                    <span className="mono text-[10px] uppercase tracking-wider text-[#5c5c63]">Full case study</span>
+                    <Link href="/work/yapshop" className="mono text-[11px] text-[#ff5c35] hover:text-[#ff7a5c] uppercase tracking-[0.15em] flex items-center gap-1.5">
+                      Read it →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* ============ SONICHOICE — FREELANCE CARD ============ */}
             <div className="relative pl-8 md:pl-10 pb-12 md:pb-16">
@@ -951,8 +1114,8 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                         <span className="text-sm text-[#a0a0a8]">Delivery operations platform</span>
                       </div>
                     </div>
-                    <a href="https://sonichoice-inventory-management.vercel.app" target="_blank" rel="noreferrer" className="mono text-[10px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#ff5c35] border-b border-[#2a2a2f] hover:border-[#ff5c35] pb-0.5 transition-colors">
-                      sonichoice.vercel.app →
+                    <a href="https://inventory.sonichoicelogistics.com" target="_blank" rel="noreferrer" className="mono text-[10px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#ff5c35] border-b border-[#2a2a2f] hover:border-[#ff5c35] pb-0.5 transition-colors">
+                      inventory.sonichoicelogistics.com →
                     </a>
                   </div>
 
@@ -1019,7 +1182,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 <div className="relative">
                   <div className="flex flex-wrap items-center gap-3 mb-5">
                     <span className="mono text-[10px] uppercase tracking-[0.25em] bg-[#ff5c35] text-[#0a0a0b] px-2.5 py-1 rounded font-bold">
-                      Lead role · current anchor
+                      Lead role · contract
                     </span>
                     <span className="mono text-[11px] text-[#a0a0a8] uppercase tracking-wider">
                       Oct 2024 — Nov 2025 · 14 months
@@ -1037,9 +1200,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                         <span className="text-sm text-[#a0a0a8]">Canadian food marketplace SaaS</span>
                       </div>
                     </div>
-                    <a href="https://afrikdish.com" target="_blank" rel="noreferrer" className="mono text-[10px] uppercase tracking-[0.2em] text-[#a0a0a8] hover:text-[#ff5c35] border-b border-[#2a2a2f] hover:border-[#ff5c35] pb-0.5 transition-colors">
-                      afrikdish.com →
-                    </a>
+                    
                   </div>
 
                   <p className="text-[15px] md:text-base text-[#e8e4d8] leading-relaxed mb-6 max-w-3xl">
@@ -1201,7 +1362,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
           <div className="col-span-12 md:col-span-3 md:col-start-10 flex flex-col gap-2.5 md:pt-3">
             <div className="flex items-center gap-2 rounded-full border border-[#c8ff3d]/40 bg-[#c8ff3d]/5 px-3 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#c8ff3d] blink shadow-[0_0_6px_#c8ff3d]" />
-              <span className="mono text-[10px] uppercase tracking-wider text-[#c8ff3d]">Available · Q2 2026</span>
+              <span className="mono text-[10px] uppercase tracking-wider text-[#c8ff3d]">Open to full-time roles</span>
             </div>
             <div className="flex items-center gap-2 rounded-full border border-[#2a2a2f] bg-[#0f0f12] px-3 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#ff5c35]" />
