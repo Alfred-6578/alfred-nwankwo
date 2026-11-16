@@ -99,9 +99,9 @@ export default function Portfolio() {
   const projects = PROJECTS.filter((p) => p.slug !== "alfpat-electronics");
 
   return (
-    <div
+    <main
       className="min-h-screen bg-[#0a0a0b] text-[#f5f2ea] overflow-x-hidden relative selection:bg-[#ff5c35] selection:text-[#0a0a0b]"
-      style={{ fontFamily: "'Geist', system-ui, sans-serif" }}
+      style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
     >
       <Script id="cal-embed-init" strategy="afterInteractive">
         {`(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -109,7 +109,6 @@ Cal("init", "discovery-call", {origin:"https://cal.com"});
 Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d"},"dark":{"cal-brand":"#c8ff3d"}},"hideEventTypeDetails":false,"layout":"month_view"});`}
       </Script>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300..600&family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap');
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes scaleIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
@@ -125,9 +124,9 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
         .fade-up { opacity: 0; animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
         .scale-in { opacity: 0; animation: scaleIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 
-        .display { font-family: 'Bricolage Grotesque', sans-serif; font-variation-settings: 'wdth' 92; }
-        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-        .serif { font-family: 'Instrument Serif', serif; }
+        .display { font-family: var(--font-bricolage), sans-serif; font-variation-settings: 'wdth' 92; }
+        .mono { font-family: var(--font-jetbrains), ui-monospace, monospace; }
+        .serif { font-family: var(--font-instrument), serif; }
 
         .orb-pulse { animation: orbPulse 4.5s ease-in-out infinite; }
         .spin-slow { animation: spinSlow 22s linear infinite; }
@@ -251,7 +250,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                       <div key={i} className={`h-6 w-6 rounded-full border-2 border-[#0f0f12] bg-gradient-to-br ${g}`} />
                     ))}
                   </div>
-                  <div className="text-[10px] text-[#71717a] leading-tight">
+                  <div className="text-[10px] text-[#8b8b94] leading-tight">
                     <div className="text-[#f5f2ea] font-semibold text-[11px]">Payments, realtime &amp; AI in prod</div>
                     <div className="text-[#c8ff3d] tracking-tight flex items-center gap-1">
                       <span className="h-1 w-1 rounded-full bg-[#c8ff3d]" /> 6 platforms shipped since 2022
@@ -373,7 +372,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 <div className="display text-3xl md:text-[42px] font-bold text-[#f5f2ea] leading-none">
                   {s.num}<span className="text-[#ff5c35]">{s.suffix}</span>
                 </div>
-                <div className="mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#71717a] mt-2">{s.label}</div>
+                <div className="mono text-[9px] md:text-[10px] uppercase tracking-[0.2em] text-[#8b8b94] mt-2">{s.label}</div>
               </div>
             ))}
           </div>
@@ -386,7 +385,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex shrink-0 items-center">
               {["React", "Next.js 16", "TypeScript", "Motion", "Tailwind 4", "GSAP", "Three.js", "Vercel", "Gemini AI", "Paystack", "React Native (learning)", "WebGL"].map((tech) => (
-                <span key={`${i}-${tech}`} className="mono text-[12px] tracking-[0.12em] text-[#6a6a72] inline-flex items-center px-7">
+                <span key={`${i}-${tech}`} className="mono text-[12px] tracking-[0.12em] text-[#8b8b94] inline-flex items-center px-7">
                   <span className="text-[#ff5c35] mr-3 text-[8px]">★</span> {tech}
                 </span>
               ))}
@@ -411,7 +410,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             <p className="text-sm md:text-base text-[#a0a0a8] leading-relaxed mb-5">
               Each preview below is a <span className="text-[#f5f2ea]">working mini-rebuild</span> of the real site at miniature scale — not a screenshot, not an iframe. Hover to pause; click &ldquo;View live&rdquo; to see the real thing.
             </p>
-            <div className="flex items-center gap-2 mono text-[10px] text-[#5c5c63] uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-2 mono text-[10px] text-[#8b8b94] uppercase tracking-[0.2em]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#c8ff3d] blink" />
               05 shown · <Link href="/work" className="text-[#f5f2ea] underline decoration-[#ff5c35]">full archive →</Link>
             </div>
@@ -430,7 +429,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
         </div>
 
         <div className="mt-24 md:mt-32 text-center border-t border-[#1a1a1d] pt-16">
-          <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#5c5c63] mb-4">
+          <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#8b8b94] mb-4">
             End of selected work
           </div>
           <h3 className="display text-3xl md:text-4xl font-bold mb-6">
@@ -533,7 +532,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 { k: "Hot Take", v: "HIMYM over Friends · don't ask me to justify it" },
               ].map((f) => (
                 <div key={f.k} className="flex items-baseline gap-3 text-sm border-b border-[#1a1a1d] pb-3 last:border-b-0 last:pb-0">
-                  <span className="mono text-[10px] uppercase tracking-wider text-[#71717a] w-[85px] flex-shrink-0">{f.k}</span>
+                  <span className="mono text-[10px] uppercase tracking-wider text-[#8b8b94] w-[85px] flex-shrink-0">{f.k}</span>
                   <span className="text-[#d4d0c8] flex-1">{f.v}</span>
                 </div>
               ))}
@@ -584,10 +583,10 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
               <div className="flex-1 pt-1 min-w-0">
                 <div className="serif italic text-lg leading-tight truncate">Burma Boy</div>
                 <div className="text-[11px] text-[#a0a0a8] mt-0.5">Biyi Bandele-Thomas</div>
-                <div className="text-[10px] text-[#71717a] mt-1">Vintage · 2008</div>
+                <div className="text-[10px] text-[#8b8b94] mt-1">Vintage · 2008</div>
               </div>
             </div>
-            <div className="mono text-[10px] text-[#71717a] mb-1.5 flex justify-between">
+            <div className="mono text-[10px] text-[#8b8b94] mb-1.5 flex justify-between">
               <span>Page 14 of 232</span>
               <span className="text-[#ff5c35] font-semibold">16%</span>
             </div>
@@ -606,7 +605,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             <div className="display text-2xl md:text-3xl font-bold mb-1 leading-tight">Lagos, NG</div>
             <div className="text-[#a0a0a8] text-xs md:text-sm mb-4">West Africa Time · UTC+1</div>
             <div className="mono text-3xl md:text-4xl font-light text-[#f5f2ea] tabular-nums tracking-tight">{lagosTime}</div>
-            <div className="mono text-[10px] text-[#71717a] mt-1 uppercase tracking-wider">My local</div>
+            <div className="mono text-[10px] text-[#8b8b94] mt-1 uppercase tracking-wider">My local</div>
           </div>
 
           {/* 6. Availability — lime accent card */}
@@ -630,11 +629,11 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             <div className="absolute -top-6 -left-2 serif italic text-[120px] text-[#ff5c35]/20 leading-none pointer-events-none select-none">&ldquo;</div>
             <div className="relative">
               <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#ff5c35] mb-5">How I think</div>
-              <p className="text-xl md:text-[26px] font-light leading-[1.4] text-[#f5f2ea] mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>
+              <p className="text-xl md:text-[26px] font-light leading-[1.4] text-[#f5f2ea] mb-4" style={{ fontFamily: "var(--font-instrument), serif" }}>
                 Good UI is invisible — until you <em className="italic text-[#ff5c35]">stop to look</em>. Then it&apos;s the details
                 that keep you there: the easing curve, the micro-copy, the one interaction that feels built for you specifically.
               </p>
-              <div className="mono text-[10px] uppercase tracking-wider text-[#71717a]">— A belief, not a quote</div>
+              <div className="mono text-[10px] uppercase tracking-wider text-[#8b8b94]">— A belief, not a quote</div>
             </div>
           </div>
 
@@ -800,7 +799,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   <span className={`h-2 w-2 rounded-full ${cat.dot} ${cat.learning ? "blink shadow-[0_0_6px_#c8ff3d]" : ""}`} />
                   <div>
                     <div className="display text-lg md:text-xl font-bold text-[#f5f2ea]">{cat.label}</div>
-                    <div className="mono text-[10px] uppercase tracking-wider text-[#71717a] mt-0.5">{cat.sub}</div>
+                    <div className="mono text-[10px] uppercase tracking-wider text-[#8b8b94] mt-0.5">{cat.sub}</div>
                   </div>
                 </div>
                 <div className="col-span-12 md:col-span-9 flex flex-wrap gap-1.5 md:gap-2">
@@ -810,7 +809,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                       className={`mono text-[11px] md:text-[12px] border ${t.featured ? "border-[#ff5c35] bg-[#ff5c35]/10 text-[#ff5c35]" : "border-[#26262a] bg-[#111113] text-[#d4d0c8]"} px-3 py-1.5 rounded-full flex items-center gap-1.5 hover:border-[#ff5c35]/60 transition-colors`}
                     >
                       {t.name}
-                      {t.v && <span className="text-[9px] text-[#71717a]">{t.v}</span>}
+                      {t.v && <span className="text-[9px] text-[#8b8b94]">{t.v}</span>}
                       {t.note && <span className="text-[9px] text-[#c8ff3d] italic">· {t.note}</span>}
                     </span>
                   ))}
@@ -858,7 +857,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 <p className="text-sm text-[#a0a0a8] leading-relaxed">
                   {op.take}
                 </p>
-                <div className="mt-4 pt-3 border-t border-[#1a1a1d] flex items-center justify-between text-[10px] mono text-[#71717a]">
+                <div className="mt-4 pt-3 border-t border-[#1a1a1d] flex items-center justify-between text-[10px] mono text-[#8b8b94]">
                   <span className="uppercase tracking-wider">Opinion · held firmly</span>
                   <span className="text-[#ff5c35]">·</span>
                 </div>
@@ -868,7 +867,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
           {/* Footer note */}
           <div className="mt-10 text-center">
-            <p className="mono text-[11px] text-[#5c5c63] uppercase tracking-[0.2em]">
+            <p className="mono text-[11px] text-[#8b8b94] uppercase tracking-[0.2em]">
               — Opinions held loosely in private, firmly in public.
             </p>
           </div>
@@ -948,7 +947,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                       </h3>
                       <div className="flex items-baseline gap-2.5 flex-wrap">
                         <span className="display text-xl md:text-2xl font-semibold text-[#ff5c35]">Toon Central</span>
-                        <span className="text-sm text-[#71717a]">·</span>
+                        <span className="text-sm text-[#8b8b94]">·</span>
                         <span className="text-sm text-[#a0a0a8]">African comics &amp; animated-shorts platform</span>
                       </div>
                     </div>
@@ -970,7 +969,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                     ].map((m, i) => (
                       <div key={i} className="border-l-2 border-[#c8ff3d] pl-3">
                         <div className="display text-2xl md:text-[32px] font-bold text-[#f5f2ea] leading-none">{m.v}</div>
-                        <div className="mono text-[9px] md:text-[10px] uppercase tracking-wider text-[#71717a] mt-2 leading-tight">{m.l}</div>
+                        <div className="mono text-[9px] md:text-[10px] uppercase tracking-wider text-[#8b8b94] mt-2 leading-tight">{m.l}</div>
                       </div>
                     ))}
                   </div>
@@ -998,7 +997,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   </div>
 
                   <div className="mt-5 pt-4 border-t border-[#1a1a1d] flex items-center justify-between">
-                    <span className="mono text-[10px] uppercase tracking-wider text-[#5c5c63]">Full case study</span>
+                    <span className="mono text-[10px] uppercase tracking-wider text-[#8b8b94]">Full case study</span>
                     <Link href="/work/toon-central" className="mono text-[11px] text-[#ff5c35] hover:text-[#ff7a5c] uppercase tracking-[0.15em] flex items-center gap-1.5">
                       Read it →
                     </Link>
@@ -1029,7 +1028,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                       </h3>
                       <div className="flex items-baseline gap-2.5 flex-wrap">
                         <span className="display text-xl md:text-2xl font-semibold text-[#ff5c35]">Emkairos Intelli Systems</span>
-                        <span className="text-sm text-[#71717a]">·</span>
+                        <span className="text-sm text-[#8b8b94]">·</span>
                         <span className="text-sm text-[#a0a0a8]">YapShop, WhatsApp AI commerce</span>
                       </div>
                     </div>
@@ -1051,7 +1050,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                     ].map((m, i) => (
                       <div key={i} className="border-l-2 border-[#ff5c35] pl-3">
                         <div className="display text-base md:text-lg font-bold text-[#f5f2ea] leading-tight">{m.v}</div>
-                        <div className="mono text-[9px] uppercase tracking-wider text-[#71717a] mt-1 leading-tight">{m.l}</div>
+                        <div className="mono text-[9px] uppercase tracking-wider text-[#8b8b94] mt-1 leading-tight">{m.l}</div>
                       </div>
                     ))}
                   </div>
@@ -1079,7 +1078,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-[#1a1a1d] flex items-center justify-between">
-                    <span className="mono text-[10px] uppercase tracking-wider text-[#5c5c63]">Full case study</span>
+                    <span className="mono text-[10px] uppercase tracking-wider text-[#8b8b94]">Full case study</span>
                     <Link href="/work/yapshop" className="mono text-[11px] text-[#ff5c35] hover:text-[#ff7a5c] uppercase tracking-[0.15em] flex items-center gap-1.5">
                       Read it →
                     </Link>
@@ -1106,11 +1105,11 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   <div className="flex items-start justify-between flex-wrap gap-3 mb-4">
                     <div>
                       <h3 className="display text-2xl md:text-3xl font-bold leading-[1.05] tracking-[-0.02em] mb-2">
-                        Frontend Developer <span className="text-[#71717a] font-normal">—</span>
+                        Frontend Developer <span className="text-[#8b8b94] font-normal">—</span>
                       </h3>
                       <div className="flex items-baseline gap-2.5 flex-wrap">
                         <span className="display text-xl md:text-2xl font-semibold text-[#ff5c35]">Sonichoice Logistics</span>
-                        <span className="text-sm text-[#71717a]">·</span>
+                        <span className="text-sm text-[#8b8b94]">·</span>
                         <span className="text-sm text-[#a0a0a8]">Delivery operations platform</span>
                       </div>
                     </div>
@@ -1133,7 +1132,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                     ].map((m, i) => (
                       <div key={i} className="border-l-2 border-[#ff5c35] pl-3">
                         <div className="display text-base md:text-lg font-bold text-[#f5f2ea] leading-tight">{m.v}</div>
-                        <div className="mono text-[9px] uppercase tracking-wider text-[#71717a] mt-1 leading-tight">{m.l}</div>
+                        <div className="mono text-[9px] uppercase tracking-wider text-[#8b8b94] mt-1 leading-tight">{m.l}</div>
                       </div>
                     ))}
                   </div>
@@ -1163,7 +1162,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-[#1a1a1d] flex items-center justify-between">
-                    <span className="mono text-[10px] uppercase tracking-wider text-[#5c5c63]">Full case preview</span>
+                    <span className="mono text-[10px] uppercase tracking-wider text-[#8b8b94]">Full case preview</span>
                     <a href="#work" className="mono text-[11px] text-[#ff5c35] hover:text-[#ff7a5c] uppercase tracking-[0.15em] flex items-center gap-1.5">
                       See in Work →
                     </a>
@@ -1196,7 +1195,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                       </h3>
                       <div className="flex items-baseline gap-2.5 flex-wrap">
                         <span className="display text-xl md:text-2xl font-semibold text-[#ff5c35]">AfrikDish</span>
-                        <span className="text-sm text-[#71717a]">·</span>
+                        <span className="text-sm text-[#8b8b94]">·</span>
                         <span className="text-sm text-[#a0a0a8]">Canadian food marketplace SaaS</span>
                       </div>
                     </div>
@@ -1219,7 +1218,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                         <div className="display text-2xl md:text-[32px] font-bold text-[#f5f2ea] leading-none">
                           {m.v}
                         </div>
-                        <div className="mono text-[9px] md:text-[10px] uppercase tracking-wider text-[#71717a] mt-2 leading-tight">{m.l}</div>
+                        <div className="mono text-[9px] md:text-[10px] uppercase tracking-wider text-[#8b8b94] mt-2 leading-tight">{m.l}</div>
                       </div>
                     ))}
                   </div>
@@ -1259,7 +1258,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   <span className="mono text-[10px] uppercase tracking-[0.25em] border border-[#2a2a2f] bg-[#111113] text-[#a0a0a8] px-2 py-0.5 rounded">
                     Internship · entry point
                   </span>
-                  <span className="mono text-[11px] text-[#71717a] uppercase tracking-wider">
+                  <span className="mono text-[11px] text-[#8b8b94] uppercase tracking-wider">
                     May — Dec 2022 · 7 months
                   </span>
                 </div>
@@ -1271,7 +1270,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                     </h3>
                     <div className="flex items-baseline gap-2 flex-wrap text-sm text-[#a0a0a8]">
                       <span className="font-semibold text-[#d4d0c8]">Genesys Tech Hub</span>
-                      <span className="text-[#71717a]">·</span>
+                      <span className="text-[#8b8b94]">·</span>
                       <span>Enugu, Nigeria · training & dev center</span>
                     </div>
                   </div>
@@ -1285,7 +1284,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   ].map((m, i) => (
                     <div key={i} className="border-l border-[#2a2a2f] pl-3">
                       <div className="display text-base md:text-lg font-bold text-[#d4d0c8] leading-tight">{m.v}</div>
-                      <div className="mono text-[9px] uppercase tracking-wider text-[#5c5c63] mt-1 leading-tight">{m.l}</div>
+                      <div className="mono text-[9px] uppercase tracking-wider text-[#8b8b94] mt-1 leading-tight">{m.l}</div>
                     </div>
                   ))}
                 </div>
@@ -1296,7 +1295,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
                 <div className="flex flex-wrap gap-1.5">
                   {["React", "REST APIs", "Modern CSS"].map((t) => (
-                    <span key={t} className="mono text-[10px] border border-[#1f1f24] bg-[#0f0f12] text-[#71717a] px-2 py-0.5 rounded-full">
+                    <span key={t} className="mono text-[10px] border border-[#1f1f24] bg-[#0f0f12] text-[#8b8b94] px-2 py-0.5 rounded-full">
                       {t}
                     </span>
                   ))}
@@ -1308,7 +1307,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
             <div className="flex items-center gap-4 mt-4">
               <div className="h-2 w-2 rounded-full bg-[#2a2a2f] ml-[2px] md:ml-[3px]" />
               <div>
-                <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#5c5c63]">Career start · May 2022</div>
+                <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#8b8b94]">Career start · May 2022</div>
               </div>
             </div>
           </div>
@@ -1316,7 +1315,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
         {/* Honest callout about career shape */}
         <div className="mt-16 md:mt-20 text-center border-t border-[#1a1a1d] pt-10 relative z-10">
-          <p className="mono text-[11px] text-[#5c5c63] uppercase tracking-[0.2em] max-w-xl mx-auto leading-relaxed">
+          <p className="mono text-[11px] text-[#8b8b94] uppercase tracking-[0.2em] max-w-xl mx-auto leading-relaxed">
             Short list, deep work · I&apos;d rather own fewer roles end-to-end than collect many halfway.
           </p>
         </div>
@@ -1421,9 +1420,9 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
               <span className="h-1.5 w-1.5 rounded-full bg-[#c8ff3d] blink shadow-[0_0_6px_#c8ff3d]" />
               Prefer to talk? · 30 min
             </div>
-            <h4 className="display text-xl md:text-[22px] font-bold mb-3 leading-tight">
+            <h3 className="display text-xl md:text-[22px] font-bold mb-3 leading-tight">
               Book a discovery call.
-            </h4>
+            </h3>
             <p className="text-xs md:text-[13px] text-[#a0a0a8] leading-relaxed mb-5 flex-1">
               No pitch deck, no pre-qualification form. Tell me what you&apos;re thinking, I&apos;ll tell you if I&apos;m right for it.
             </p>
@@ -1466,7 +1465,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
           {/* Not my thing */}
           <div className="rounded-2xl border border-[#2a2a2f] bg-[#0a0a0b]/60 p-6 md:p-7">
-            <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#71717a] mb-5 flex items-center gap-2">
+            <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#8b8b94] mb-5 flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-[#71717a]" /> Honestly not my thing
             </div>
             <div className="space-y-3">
@@ -1477,7 +1476,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 "Unpaid spec work or \"we'll discuss budget after\"",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 text-sm text-[#a0a0a8] leading-relaxed">
-                  <span className="text-[#5c5c63] mt-1 flex-shrink-0">−</span>
+                  <span className="text-[#8b8b94] mt-1 flex-shrink-0">−</span>
                   <span>{item}</span>
                 </div>
               ))}
@@ -1487,7 +1486,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
         {/* Socials */}
         <div className="border-t border-[#1a1a1d] pt-10 md:pt-12 relative z-10">
-          <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#5c5c63] mb-6 text-center">
+          <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#8b8b94] mb-6 text-center">
             or find me scattered across →
           </div>
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
@@ -1506,7 +1505,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                 className="group inline-flex items-center gap-2 rounded-full border border-[#2a2a2f] bg-[#0f0f12] hover:border-[#ff5c35] hover:bg-[#111113] px-4 py-2 transition-all"
               >
                 <span className="mono text-xs text-[#d4d0c8] group-hover:text-[#f5f2ea] transition-colors">{s.name}</span>
-                <span className="mono text-[10px] text-[#71717a] group-hover:text-[#ff5c35] transition-colors">{s.handle}</span>
+                <span className="mono text-[10px] text-[#8b8b94] group-hover:text-[#ff5c35] transition-colors">{s.handle}</span>
                 <span className="text-[#ff5c35] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
               </a>
             ))}
@@ -1524,7 +1523,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
               ALFRED<span className="text-[#ff5c35]">.</span>
             </h2>
             {/* Italic annotation absolute */}
-            <span className="absolute bottom-[18%] right-[5%] md:right-[8%] serif italic text-sm md:text-lg text-[#71717a] max-w-[200px] text-right hidden md:block">
+            <span className="absolute bottom-[18%] right-[5%] md:right-[8%] serif italic text-sm md:text-lg text-[#8b8b94] max-w-[200px] text-right hidden md:block">
               (nwankwo, in case you forgot — web dev, lagos, ready when you are)
             </span>
           </div>
@@ -1536,7 +1535,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
             {/* Nav back-up */}
             <div className="col-span-6 md:col-span-3">
-              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#5c5c63] mb-4">Navigate</div>
+              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-4">Navigate</div>
               <div className="space-y-2 mono text-[11px]">
                 {[
                   { l: "Home", n: "00" },
@@ -1547,7 +1546,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
                   { l: "Contact", n: "05" },
                 ].map((item) => (
                   <a key={item.l} href={`#${item.l.toLowerCase()}`} className="flex items-center gap-2 text-[#a0a0a8] hover:text-[#ff5c35] transition-colors">
-                    <span className="text-[#5c5c63]">{item.n}</span>
+                    <span className="text-[#8b8b94]">{item.n}</span>
                     <span>{item.l}</span>
                   </a>
                 ))}
@@ -1556,7 +1555,7 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
             {/* Elsewhere */}
             <div className="col-span-6 md:col-span-3">
-              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#5c5c63] mb-4">Elsewhere</div>
+              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-4">Elsewhere</div>
               <div className="space-y-2 mono text-[11px]">
                 {[
                   { name: "GitHub", handle: "@alfrednwankwo", url: "https://github.com/Alfred-6578" },
@@ -1575,14 +1574,14 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
             {/* Meta */}
             <div className="col-span-12 md:col-span-6 md:text-right">
-              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#5c5c63] mb-4 md:mb-5">Colophon</div>
+              <div className="mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94] mb-4 md:mb-5">Colophon</div>
               <p className="text-sm text-[#a0a0a8] leading-relaxed mb-3">
                 Designed and built by Alfred Nwankwo, in Lagos.
               </p>
-              <p className="mono text-[11px] text-[#71717a] leading-relaxed">
+              <p className="mono text-[11px] text-[#8b8b94] leading-relaxed">
                 Next.js 16 · Motion · Tailwind 4 · Bricolage Grotesque · Instrument Serif · 3am energy.
               </p>
-              <p className="mono text-[11px] text-[#5c5c63] mt-3" suppressHydrationWarning>
+              <p className="mono text-[11px] text-[#8b8b94] mt-3" suppressHydrationWarning>
                 Portfolio v.004 · updated {new Date().toLocaleDateString("en-US", { month: "short", year: "numeric" })}
               </p>
             </div>
@@ -1590,18 +1589,18 @@ Cal.ns["discovery-call"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#c8ff3d
 
           {/* Bottom bar */}
           <div className="mt-10 pt-6 border-t border-[#1a1a1d] flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3 mono text-[10px] uppercase tracking-[0.25em] text-[#5c5c63]">
+            <div className="flex items-center gap-3 mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94]">
               <span>© 2026 Alfred Nwankwo</span>
               <span className="text-[#2a2a2f]">·</span>
               <span>All work shown is real, except the stuff marked placeholder.</span>
             </div>
-            <div className="flex items-center gap-2 mono text-[10px] uppercase tracking-[0.25em] text-[#5c5c63]">
+            <div className="flex items-center gap-2 mono text-[10px] uppercase tracking-[0.25em] text-[#8b8b94]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#c8ff3d] blink shadow-[0_0_6px_#c8ff3d]" />
               <span className="text-[#c8ff3d]">Lagos · {lagosTime}</span>
             </div>
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }

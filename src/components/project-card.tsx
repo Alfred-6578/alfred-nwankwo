@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { BrowserFrame, PreviewLiveNav, ScrollingPreview } from "@/components/browser-frame";
-import { useInView } from "@/components/use-in-view";
+import { useInView, useNearView } from "@/components/use-in-view";
 import type { Project } from "@/lib/projects";
 
 export function ProjectCard({
@@ -16,6 +16,7 @@ export function ProjectCard({
   flipped: boolean;
 }) {
   const [cardRef, inView] = useInView(0.35);
+  const [frameRef, near] = useNearView();
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -38,10 +39,10 @@ export function ProjectCard({
       <div className={`relative z-10 grid grid-cols-12 gap-6 md:gap-10 items-center ${flipped ? "md:[&>*:first-child]:order-2" : ""}`}>
         <div className={`col-span-12 md:col-span-5 ${flipped ? "md:col-start-8" : ""}`}>
           <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#ff5c35] mb-4 flex items-center gap-3">
-            <span className="text-[#71717a]">({String(index).padStart(2, "0")})</span>
+            <span className="text-[#8b8b94]">({String(index).padStart(2, "0")})</span>
             <span className="h-px flex-1 max-w-[40px] bg-[#2a2a2f]" />
             <span>{project.year}</span>
-            <span className="text-[#71717a]">·</span>
+            <span className="text-[#8b8b94]">·</span>
             <span className="text-[#a0a0a8]">{project.type}</span>
           </div>
 
@@ -78,7 +79,7 @@ export function ProjectCard({
                   <div className="display text-xl md:text-2xl font-bold text-[#f5f2ea] leading-none">
                     {s.value}
                   </div>
-                  <div className="mono text-[9px] uppercase tracking-widest text-[#71717a] mt-1.5 leading-tight">{s.label}</div>
+                  <div className="mono text-[9px] uppercase tracking-widest text-[#8b8b94] mt-1.5 leading-tight">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -94,20 +95,24 @@ export function ProjectCard({
             className="transform transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-[1.01]"
             style={{ filter: inView ? "none" : "grayscale(0.4) brightness(0.85)" }}
           >
-            <BrowserFrame url={project.url}>
-              <ScrollingPreview inView={inView} paused={hovered}>
-                <PreviewLiveNav liveUrl={project.url}>
-                  {project.preview}
-                </PreviewLiveNav>
-              </ScrollingPreview>
-            </BrowserFrame>
+            <div ref={frameRef}>
+              <BrowserFrame url={project.url}>
+                {near && (
+                  <ScrollingPreview inView={inView} paused={hovered}>
+                    <PreviewLiveNav liveUrl={project.url}>
+                      {project.preview}
+                    </PreviewLiveNav>
+                  </ScrollingPreview>
+                )}
+              </BrowserFrame>
+            </div>
           </div>
 
           <div className="mt-3 flex items-center justify-between">
-            <div className="mono text-[10px] text-[#5c5c63] uppercase tracking-[0.2em]">
+            <div className="mono text-[10px] text-[#8b8b94] uppercase tracking-[0.2em]">
               {project.client}
             </div>
-            <div className="mono text-[10px] text-[#5c5c63] uppercase tracking-[0.2em] flex items-center gap-1.5">
+            <div className="mono text-[10px] text-[#8b8b94] uppercase tracking-[0.2em] flex items-center gap-1.5">
               <span className={`h-1.5 w-1.5 rounded-full ${inView ? "bg-[#c8ff3d]" : "bg-[#5c5c63]"} transition-colors`} />
               {inView ? (hovered ? "paused" : "playing") : "idle"}
             </div>

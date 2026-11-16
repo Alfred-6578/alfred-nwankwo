@@ -6,10 +6,9 @@ export default function ResumePage() {
   return (
     <div className="resume-viewport min-h-screen bg-[#f3efe7] text-[#0a0a0b]">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300..600&family=Geist:wght@300..700&display=swap');
-        .display { font-family: 'Bricolage Grotesque', sans-serif; font-variation-settings: 'wdth' 92; }
-        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-        .resume-viewport { font-family: 'Geist', ui-sans-serif, system-ui, sans-serif; }
+        .display { font-family: var(--font-bricolage), sans-serif; font-variation-settings: 'wdth' 92; }
+        .mono { font-family: var(--font-jetbrains), ui-monospace, monospace; }
+        .resume-viewport { font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif; }
 
         /* ===== Screen (on-portfolio viewing) ===== */
         .resume-page {
@@ -22,12 +21,12 @@ export default function ResumePage() {
         }
 
         .r-section-heading {
-          font-family: 'Geist', ui-sans-serif, system-ui, sans-serif;
+          font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
           font-size: 10.5px;
           font-weight: 700;
           letter-spacing: 0.22em;
           text-transform: uppercase;
-          color: #ff5c35;
+          color: #c2410c;
           padding-bottom: 4px;
           border-bottom: 1.5px solid #ff5c35;
           margin-bottom: 12px;
@@ -36,7 +35,7 @@ export default function ResumePage() {
         .r-role-line { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
         .r-role-title { font-weight: 600; font-size: 13px; color: #111; }
         .r-role-meta { font-size: 12px; color: #4a4a55; font-style: italic; margin-top: 1px; }
-        .r-role-date { font-size: 11px; color: #6a6a75; white-space: nowrap; font-family: 'JetBrains Mono', monospace; }
+        .r-role-date { font-size: 11px; color: #6a6a75; white-space: nowrap; font-family: var(--font-jetbrains), monospace; }
 
         .r-bullets { list-style: none; padding: 0; margin: 6px 0 0; }
         .r-bullets li {
@@ -59,7 +58,7 @@ export default function ResumePage() {
         }
 
         .r-project-title { font-weight: 600; font-size: 13px; color: #111; }
-        .r-project-meta { font-size: 11px; color: #6a6a75; font-family: 'JetBrains Mono', monospace; margin-top: 1px; }
+        .r-project-meta { font-size: 11px; color: #6a6a75; font-family: var(--font-jetbrains), monospace; margin-top: 1px; }
         .r-project-desc { font-size: 12px; line-height: 1.5; color: #2a2a2f; margin-top: 4px; }
 
         .r-skills-row { font-size: 12px; line-height: 1.7; color: #2a2a2f; }
@@ -102,7 +101,7 @@ export default function ResumePage() {
           <button
             type="button"
             onClick={() => window.print()}
-            className="inline-flex items-center gap-2 rounded-full bg-[#ff5c35] text-white px-5 py-1.5 text-[12px] font-semibold hover:bg-[#ff7a5c] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#c2410c] text-white px-5 py-1.5 text-[12px] font-semibold hover:bg-[#9a3412] transition-colors cursor-pointer"
           >
             Download PDF
             <span>↓</span>

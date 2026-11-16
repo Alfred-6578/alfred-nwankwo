@@ -1,9 +1,13 @@
-import { StayHavenPreview } from "@/components/previews/stay-haven";
-import { SiteGeniePreview } from "@/components/previews/site-genie";
-import { SonichoicePreview } from "@/components/previews/sonichoice";
-import { AlfpatPreview } from "@/components/previews/alfpat";
-import { ToonCentralPreview } from "@/components/previews/toon-central";
-import { YapShopPreview } from "@/components/previews/yapshop";
+import dynamic from "next/dynamic";
+
+// Each live preview is a whole mini-site; split them out so a page only downloads the ones it renders.
+const StayHavenPreview = dynamic(() => import("@/components/previews/stay-haven").then((m) => m.StayHavenPreview));
+const SiteGeniePreview = dynamic(() => import("@/components/previews/site-genie").then((m) => m.SiteGeniePreview));
+const SonichoicePreview = dynamic(() => import("@/components/previews/sonichoice").then((m) => m.SonichoicePreview));
+const AlfpatPreview = dynamic(() => import("@/components/previews/alfpat").then((m) => m.AlfpatPreview));
+const ToonCentralPreview = dynamic(() => import("@/components/previews/toon-central").then((m) => m.ToonCentralPreview));
+const YapShopPreview = dynamic(() => import("@/components/previews/yapshop").then((m) => m.YapShopPreview));
+
 
 export type ProjectStat = { value: string; label: string };
 

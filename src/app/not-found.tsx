@@ -2,15 +2,14 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div
+    <main
       className="min-h-screen bg-[#0a0a0b] text-[#f5f2ea] overflow-x-hidden relative selection:bg-[#ff5c35] selection:text-[#0a0a0b] flex flex-col"
-      style={{ fontFamily: "'Geist', system-ui, sans-serif" }}
+      style={{ fontFamily: "var(--font-geist-sans), system-ui, sans-serif" }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300..600&family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap');
-        .display { font-family: 'Bricolage Grotesque', sans-serif; font-variation-settings: 'wdth' 92; }
-        .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
-        .serif { font-family: 'Instrument Serif', serif; }
+        .display { font-family: var(--font-bricolage), sans-serif; font-variation-settings: 'wdth' 92; }
+        .mono { font-family: var(--font-jetbrains), ui-monospace, monospace; }
+        .serif { font-family: var(--font-instrument), serif; }
         @keyframes blink404 { 50% { opacity: 0.25; } }
         .blink404 { animation: blink404 1.2s ease-in-out infinite; }
         @keyframes driftGlyph { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
@@ -97,7 +96,7 @@ export default function NotFound() {
 
           {/* hint card — for when the bad link came from Alfred himself */}
           <div className="rounded-2xl border border-[#2a2a2f] bg-[#0f0f12]/85 p-5 md:p-6 relative overflow-hidden max-w-xl">
-            <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#71717a] mb-3 flex items-center gap-2">
+            <div className="mono text-[10px] uppercase tracking-[0.3em] text-[#8b8b94] mb-3 flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#71717a]" />
               If you got here from a link I shared
             </div>
@@ -115,6 +114,6 @@ export default function NotFound() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
